@@ -37,16 +37,21 @@ nav:
 - Home: index.md
 
 - Setting Up Tools:
-  - Guide to starting Python: GettingStarted/anaconda.md
-  - Guide to Python Libraries: GettingStarted/lib.md
-  - Setting up Python Environment: GettingStarted/env.md
-  - Installing Jupyter Notebook : GettingStarted/jupyter.md
-  - How to Git: GettingStarted/git.md
+  - Setting up AWS cloud: setup/env.md
+  - Setting up Python: setup/anaconda.md
+  - Setting up Neo4J: setup/lib.md
+  - Setting up MongoDB: setup/env.md
+  - Setting up Spark: setup/env.md
+  - Setting up Node: setup/env.md
+  - Setting up Elasticsearch : setup/jupyter.md
+  - Setting up Git: setup/git.md
 
+- Introduction: 
+  - Workflow: workflow.md
   
-- Data Download and Processing Pipelines:
+- Download and Processing:
   - Download Pipeline: download/download.md
-  - Data Parsing Pipeline: parsing/parsing.md
+  - Parsing Pipeline: parsing/parsing.md
   - Mapping Tables: mapping/mapping.md
   - Exploratory Data Analysis: explore/explore.md
 
@@ -60,7 +65,7 @@ nav:
  
 
 
-- AI Search Implementation:
+- Graph Algorithms:
   - Algorithms - I: algorithms/alg-I.md
   - Algorithms - II: algorithms/alg-II.md
   - Algorithms - II: algorithms/alg-III.md
@@ -68,9 +73,9 @@ nav:
 
 
 - Model Based Analysis:
-  - Clustering: model/clustering.md
-  - Link Prediction : model/link.md
-  - Randomwalk : model/random-walk.md
+  - Clustering: models/clustering.md
+  - Link Prediction : models/link.md
+  - Randomwalk : models/random-walk.md
 
 
 

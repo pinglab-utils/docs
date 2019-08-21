@@ -1,6 +1,6 @@
-#ICD11 Pipeline
+## ICD 11 Download Pipeline
 
-##Setup 
+### Setting up API
 To download ICD11 data you need to use the API provided at: [https://icd.who.int/icdapi](https://icd.who.int/icdapi). In order to gain access to the API you
 need to create an account and use the client key provided. With the client key
 you are now able to access all of the endpoints specified in the
@@ -9,7 +9,7 @@ you are now able to access all of the endpoints specified in the
 The rest of this guide uses the ICD11 module from the ping lab utils package.
 You can find and clone the module here: [https://github.com/salviStudent/testing/tree/master/testing-master](https://github.com/salviStudent/testing/tree/master/testing-master).
 
-##Working Directory and Additonal Dependencies
+### Working Directory and Additonal Dependencies
 For the simplest use you need to have a json file named config.json in your
 working directory. The config file needs to have the following:
 ```
@@ -26,7 +26,7 @@ pip3 install requests
 ```
 if it is not already installed.
 
-##Getting started
+### Getting started
 Once all of this is in place you are ready to start downloading ICD-11 data.
 As an example we show the results from the ICD-11 code corresponding to
 hypertensive heart disease.

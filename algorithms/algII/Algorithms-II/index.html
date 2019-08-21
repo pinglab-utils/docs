@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Algorithms - II - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Algorithms - II";
+    var mkdocs_page_input_path = "algorithms/algII/Algorithms-II.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/env/">Setting up AWS cloud</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/lib/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/env/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/env/">Setting up Spark</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/env/">Setting up Node</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/jupyter/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../parsing/parsing/">Parsing Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../mapping/mapping/">Mapping Tables</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../explore/explore/">Exploratory Data Analysis</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database Integration</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../indexing/indexing/">Indexing</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../graph/graph/">Graphical Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../nosql/nosql/">NoSQL database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../flask/flask/">Flask Implementation</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../node/node/">Node Implementation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Graph Algorithms</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../algI/Algorithms-I/">Algorithms - I</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Algorithms - II
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#algorithm-ii">
+      Algorithm - II
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#clustering-link-analysis-node-classification-link-prediction">Clustering, Link Analysis, Node Classification, Link Prediction</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#clustering">Clustering</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#link-analysis">
+      Link Analysis
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#pagerank">PageRank</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#hits">Hits</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#node-classification">Node Classification</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#link-prediction">Link Prediction</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../algIII/Algorithms-III/">Algorithms - II</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Graph Algorithms &raquo;</li>
+        
+      
+    
+    <li>Algorithms - II</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="algorithm-ii">Algorithm - II</h2>
+<h3 id="clustering-link-analysis-node-classification-link-prediction">Clustering, Link Analysis, Node Classification, Link Prediction</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">networkx</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">nx</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #555555">%</span>matplotlib inline
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">warnings</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.cbook</span>
+warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: #CC3300">&quot;ignore&quot;</span>,category<span style="color: #555555">=</span>matplotlib<span style="color: #555555">.</span>cbook<span style="color: #555555">.</span>mplDeprecation)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_4_0.png" /></p>
+<h3 id="clustering">Clustering</h3>
+<p>Algorithms to characterize the number of triangles in a graph.</p>
+<ul>
+<li><code>triangles(G[, nodes])</code>   Compute the number of triangles.</li>
+<li><code>transitivity(G)</code>     Compute graph transitivity, the fraction of all possible triangles present in G.</li>
+<li><code>clustering(G[, nodes, weight])</code>  Compute the clustering coefficient for nodes.</li>
+<li><code>average_clustering(G[, nodes, weight, …])</code>   Compute the average clustering coefficient for the graph G.</li>
+<li><code>square_clustering(G[, nodes])</code>   Compute the squares clustering coefficient for nodes.</li>
+<li><code>generalized_degree(G[, nodes])</code>  Compute the generalized degree for nodes.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>triangles(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{0: 18,
+ 1: 12,
+ 2: 11,
+ 3: 10,
+ 4: 2,
+ 5: 3,
+ 6: 3,
+ 7: 6,
+ 8: 5,
+ 9: 0,
+ 10: 2,
+ 11: 0,
+ 12: 1,
+ 13: 6,
+ 14: 1,
+ 15: 1,
+ 16: 1,
+ 17: 1,
+ 18: 1,
+ 19: 1,
+ 20: 1,
+ 21: 1,
+ 22: 1,
+ 23: 4,
+ 24: 1,
+ 25: 1,
+ 26: 1,
+ 27: 1,
+ 28: 1,
+ 29: 4,
+ 30: 3,
+ 31: 3,
+ 32: 13,
+ 33: 15}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>transitivity(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.2556818181818182
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>clustering(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{0: 0.15,
+ 1: 0.3333333333333333,
+ 2: 0.24444444444444444,
+ 3: 0.6666666666666666,
+ 4: 0.6666666666666666,
+ 5: 0.5,
+ 6: 0.5,
+ 7: 1.0,
+ 8: 0.5,
+ 9: 0,
+ 10: 0.6666666666666666,
+ 11: 0,
+ 12: 1.0,
+ 13: 0.6,
+ 14: 1.0,
+ 15: 1.0,
+ 16: 1.0,
+ 17: 1.0,
+ 18: 1.0,
+ 19: 0.3333333333333333,
+ 20: 1.0,
+ 21: 1.0,
+ 22: 1.0,
+ 23: 0.4,
+ 24: 0.3333333333333333,
+ 25: 0.3333333333333333,
+ 26: 1.0,
+ 27: 0.16666666666666666,
+ 28: 0.3333333333333333,
+ 29: 0.6666666666666666,
+ 30: 0.5,
+ 31: 0.2,
+ 32: 0.19696969696969696,
+ 33: 0.11029411764705882}
+</pre></div>
+
+
+<hr />
+<h3 id="link-analysis">Link Analysis</h3>
+<h4 id="pagerank">PageRank</h4>
+<p>PageRank analysis of graph structure.</p>
+<ul>
+<li><code>pagerank(G[, alpha, personalization, …])</code>    Returns the PageRank of the nodes in the graph.</li>
+<li><code>pagerank_numpy(G[, alpha, personalization, …])</code>  Returns the PageRank of the nodes in the graph.</li>
+<li><code>pagerank_scipy(G[, alpha, personalization, …])</code>  Returns the PageRank of the nodes in the graph.</li>
+<li><code>google_matrix(G[, alpha, personalization, …])</code>   Returns the Google matrix of the graph.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>pagerank(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{0: 0.09700181758983709,
+ 1: 0.05287839103742701,
+ 2: 0.057078423047636745,
+ 3: 0.03586064322306479,
+ 4: 0.021979406974834498,
+ 5: 0.02911334166344221,
+ 6: 0.02911334166344221,
+ 7: 0.024490758039509182,
+ 8: 0.029765339186167028,
+ 9: 0.014308950284462801,
+ 10: 0.021979406974834498,
+ 11: 0.009564916863537148,
+ 12: 0.014645186487916191,
+ 13: 0.029536314977202986,
+ 14: 0.014535161524273825,
+ 15: 0.014535161524273825,
+ 16: 0.016785378110253487,
+ 17: 0.014558859774243493,
+ 18: 0.014535161524273825,
+ 19: 0.019604416711937293,
+ 20: 0.014535161524273825,
+ 21: 0.014558859774243493,
+ 22: 0.014535161524273825,
+ 23: 0.03152091531163228,
+ 24: 0.021075455001162945,
+ 25: 0.021005628174745786,
+ 26: 0.015043395360629753,
+ 27: 0.025638803528350497,
+ 28: 0.01957296050943854,
+ 29: 0.02628726283711208,
+ 30: 0.02458933653429248,
+ 31: 0.03715663592267942,
+ 32: 0.07169213006588289,
+ 33: 0.1009179167487121}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>google_matrix(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[0.00441176, 0.05753676, 0.05753676, ..., 0.05753676, 0.00441176,
+         0.00441176],
+        [0.09885621, 0.00441176, 0.09885621, ..., 0.00441176, 0.00441176,
+         0.00441176],
+        [0.08941176, 0.08941176, 0.00441176, ..., 0.00441176, 0.08941176,
+         0.00441176],
+        ...,
+        [0.14607843, 0.00441176, 0.00441176, ..., 0.00441176, 0.14607843,
+         0.14607843],
+        [0.00441176, 0.00441176, 0.0752451 , ..., 0.0752451 , 0.00441176,
+         0.0752451 ],
+        [0.00441176, 0.00441176, 0.00441176, ..., 0.05441176, 0.05441176,
+         0.00441176]])
+</pre></div>
+
+
+<hr />
+<h4 id="hits">Hits</h4>
+<p>Hubs and authorities analysis of graph structure.</p>
+<ul>
+<li><code>hits(G[, max_iter, tol, nstart, normalized])</code>    Returns HITS hubs and authorities values for nodes.</li>
+<li><code>hits_numpy(G[, normalized])</code>     Returns HITS hubs and authorities values for nodes.</li>
+<li><code>hits_scipy(G[, max_iter, tol, normalized])</code>  Returns HITS hubs and authorities values for nodes.</li>
+<li><code>hub_matrix(G[, nodelist])</code>   Returns the HITS hub matrix.</li>
+<li><code>authority_matrix(G[, nodelist])</code>     Returns the HITS authority matrix.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>hits(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>({0: 0.07141272875773573,
+  1: 0.053427231205172614,
+  2: 0.06371906453963268,
+  3: 0.04242273710428976,
+  4: 0.01526095969815266,
+  5: 0.015966913494418547,
+  6: 0.015966913494418547,
+  7: 0.034343167206797434,
+  8: 0.0456819251308063,
+  9: 0.020625667757182626,
+  10: 0.01526095969815266,
+  11: 0.01061789150852051,
+  12: 0.01692545078543599,
+  13: 0.04549486406600547,
+  14: 0.020370345842716076,
+  15: 0.020370345842716076,
+  16: 0.004748031841562519,
+  17: 0.018561637031907358,
+  18: 0.020370345842716076,
+  19: 0.02971333389111539,
+  20: 0.020370345842716076,
+  21: 0.018561637031907358,
+  22: 0.020370345842716076,
+  23: 0.030156497528902444,
+  24: 0.011460952230139869,
+  25: 0.01189366439609368,
+  26: 0.015182734341447207,
+  27: 0.02681349412708363,
+  28: 0.0263315057833753,
+  29: 0.027111539646424865,
+  30: 0.03510623798827733,
+  31: 0.03837574188047834,
+  32: 0.06200184647463986,
+  33: 0.07500294214634279},
+ {0: 0.07141272880870855,
+  1: 0.05342723122870397,
+  2: 0.06371906455587135,
+  3: 0.04242273710611524,
+  4: 0.015260959692251741,
+  5: 0.01596691348769785,
+  6: 0.01596691348769785,
+  7: 0.03434316719678568,
+  8: 0.045681925113766106,
+  9: 0.020625667747004237,
+  10: 0.015260959692251741,
+  11: 0.010617891499780771,
+  12: 0.016925450777611116,
+  13: 0.045494864044925934,
+  14: 0.02037034582705704,
+  15: 0.02037034582705704,
+  16: 0.004748031844529441,
+  17: 0.01856163702009135,
+  18: 0.02037034582705704,
+  19: 0.029713333868231606,
+  20: 0.02037034582705704,
+  21: 0.01856163702009135,
+  22: 0.02037034582705704,
+  23: 0.030156497522138854,
+  24: 0.011460952243147787,
+  25: 0.011893664411194165,
+  26: 0.015182734336172116,
+  27: 0.026813494122100573,
+  28: 0.026331505783102067,
+  29: 0.02711153964098065,
+  30: 0.03510623797808329,
+  31: 0.03837574185646307,
+  32: 0.06200184653550559,
+  33: 0.0750029422437107})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>hub_matrix(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[16.,  7.,  5., ...,  0.,  3.,  4.],
+        [ 7.,  9.,  4., ...,  1.,  2.,  3.],
+        [ 5.,  4., 10., ...,  3.,  1.,  6.],
+        ...,
+        [ 0.,  1.,  3., ...,  6.,  1.,  2.],
+        [ 3.,  2.,  1., ...,  1., 12., 10.],
+        [ 4.,  3.,  6., ...,  2., 10., 17.]])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>authority_matrix(G)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>matrix([[16.,  7.,  5., ...,  0.,  3.,  4.],
+        [ 7.,  9.,  4., ...,  1.,  2.,  3.],
+        [ 5.,  4., 10., ...,  3.,  1.,  6.],
+        ...,
+        [ 0.,  1.,  3., ...,  6.,  1.,  2.],
+        [ 3.,  2.,  1., ...,  1., 12., 10.],
+        [ 4.,  3.,  6., ...,  2., 10., 17.]])
+</pre></div>
+
+
+<hr />
+<h3 id="node-classification">Node Classification</h3>
+<p>This module provides the functions for node classification problem.</p>
+<p>The functions in this module are not imported into the top level networkx namespace. You can access these functions by importing the <code>networkx.algorithms.node_classification</code> modules, then accessing the functions as attributes of node_classification. For example:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">networkx</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">nx</span>
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms</span> <span style="color: #006699; font-weight: bold">import</span> node_classification
+G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">3</span>,<span style="color: #FF6600">3</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_20_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G<span style="color: #555555">.</span>node[<span style="color: #FF6600">1</span>][<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;A&#39;</span>
+G<span style="color: #555555">.</span>node[<span style="color: #FF6600">2</span>][<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;B&#39;</span>
+G<span style="color: #555555">.</span>node[<span style="color: #FF6600">3</span>][<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;C&#39;</span>
+L <span style="color: #555555">=</span> node_classification<span style="color: #555555">.</span>harmonic_function(G)
+<span style="color: #006699; font-weight: bold">print</span>(L)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[&#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>LL <span style="color: #555555">=</span> {}
+<span style="color: #006699; font-weight: bold">for</span> n,l <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">zip</span>(G<span style="color: #555555">.</span>nodes(),L):
+    LL<span style="color: #555555">.</span>update({n:l})
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, labels <span style="color: #555555">=</span> LL, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_23_0.png" /></p>
+<hr />
+<h3 id="link-prediction">Link Prediction</h3>
+<p>Link prediction algorithms.</p>
+<ul>
+<li><code>resource_allocation_index(G[, ebunch])</code>  Compute the resource allocation index of all node pairs in ebunch.</li>
+<li><code>jaccard_coefficient(G[, ebunch])</code>    Compute the Jaccard coefficient of all node pairs in ebunch.</li>
+<li><code>adamic_adar_index(G[, ebunch])</code>  Compute the Adamic-Adar index of all node pairs in ebunch.</li>
+<li><code>preferential_attachment(G[, ebunch])</code>    Compute the preferential attachment score of all node pairs in ebunch.</li>
+<li><code>cn_soundarajan_hopcroft(G[, ebunch, community])</code>     Count the number of common neighbors of all node pairs in ebunch</li>
+<li><code>ra_index_soundarajan_hopcroft(G[, ebunch, …])</code>   Compute the resource allocation index of all node pairs in ebunch using community information.</li>
+<li><code>within_inter_cluster(G[, ebunch, delta, …])</code>     Compute the ratio of within- and inter-cluster common neighb</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_26_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>preds <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>resource_allocation_index(G, [(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">10</span>),(<span style="color: #FF6600">9</span>, <span style="color: #FF6600">18</span>), (<span style="color: #FF6600">11</span>, <span style="color: #FF6600">12</span>),(<span style="color: #FF6600">30</span>,<span style="color: #FF6600">27</span>),(<span style="color: #FF6600">16</span>,<span style="color: #FF6600">26</span>)])
+<span style="color: #006699; font-weight: bold">for</span> u, v, p <span style="color: #000000; font-weight: bold">in</span> preds:
+    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;(</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">) -&gt; </span><span style="color: #AA0000">%.8f</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (u, v, p))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(0, 10) -&amp;gt; 0.58333333
+(9, 18) -&amp;gt; 0.05882353
+(11, 12) -&amp;gt; 0.06250000
+(30, 27) -&amp;gt; 0.05882353
+(16, 26) -&amp;gt; 0.00000000
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../algIII/Algorithms-III/" class="btn btn-neutral float-right" title="Algorithms - II">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../algI/Algorithms-I/" class="btn btn-neutral" title="Algorithms - I"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../algI/Algorithms-I/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../algIII/Algorithms-III/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

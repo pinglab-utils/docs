@@ -1,0 +1,78 @@
+
+
+site_name: ICD 11 Code Tools
+
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    
+theme:
+  name: 'rtd-dropdown'
+  highlightjs: true
+  hljs_languages: []
+  include_homepage_in_sidebar: true
+  prev_next_buttons_location: bottom
+  navigation_depth: 4
+  titles_only: false
+  sticky_navigation: true
+  collapse_navigation: true
+ 
+ 
+  
+      
+markdown_extensions:
+  - codehilite:
+      linenums: false
+      guess_lang: false
+      use_pygments: true
+      noclasses: true
+      pygments_style: manni
+
+
+
+nav:
+- Home: index.md
+
+- Setting Up Tools:
+  - Guide to starting Python: GettingStarted/anaconda.md
+  - Guide to Python Libraries: GettingStarted/lib.md
+  - Setting up Python Environment: GettingStarted/env.md
+  - Installing Jupyter Notebook : GettingStarted/jupyter.md
+  - How to Git: GettingStarted/git.md
+
+  
+- Data Download and Processing Pipelines:
+  - Download Pipeline: download/download.md
+  - Data Parsing Pipeline: parsing/parsing.md
+  - Mapping Tables: mapping/mapping.md
+  - Exploratory Data Analysis: explore/explore.md
+
+
+- Database Integration:
+  - Indexing: indexing/indexing.md
+  - Graphical Database: graph/graph.md
+  - NoSQL database : nosql/nosql.md
+  - Flask Implementation: flask/flask.md
+  - Node Implementation: node/node.md
+ 
+
+
+- AI Search Implementation:
+  - Algorithms - I: algorithms/alg-I.md
+  - Algorithms - II: algorithms/alg-II.md
+  - Algorithms - II: algorithms/alg-III.md
+  
+
+
+- Model Based Analysis:
+  - Clustering: model/clustering.md
+  - Link Prediction : model/link.md
+  - Randomwalk : model/random-walk.md
+
+
+
+ 
+ 

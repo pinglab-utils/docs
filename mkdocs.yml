@@ -66,9 +66,9 @@ nav:
 
 
 - Graph Algorithms:
-  - Algorithms - I: algorithms/alg-I.md
-  - Algorithms - II: algorithms/alg-II.md
-  - Algorithms - II: algorithms/alg-III.md
+  - Algorithms - I: algorithms/algI/Algorithms-I.md
+  - Algorithms - II: algorithms/algII/Algorithms-II.md
+  - Algorithms - II: algorithms/algIII/Algorithms-III.md
   
 
 

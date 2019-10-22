@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Indexing - ICD 11 Code Tools</title>
+  <title>Indexing Database - ICD 11 Code Tools</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Indexing";
+    var mkdocs_page_name = "Indexing Database";
     var mkdocs_page_input_path = "indexing/indexing.md";
     var mkdocs_page_url = null;
   </script>
@@ -71,13 +71,6 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/env/">Setting up AWS cloud</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
     <a class="" href="../../setup/anaconda/">Setting up Python</a>
   </li>
         
@@ -85,35 +78,28 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/lib/">Setting up Neo4J</a>
+    <a class="" href="../../setup/env/">Setting up Environment</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/env/">Setting up MongoDB</a>
+    <a class="" href="../../setup/elastic/">Setting up Elasticsearch</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/env/">Setting up Spark</a>
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/env/">Setting up Node</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../setup/jupyter/">Setting up Elasticsearch</a>
+    <a class="" href="../../setup/mongo/">Setting up MongoDB</a>
   </li>
         
           
@@ -172,26 +158,12 @@
     <a class="" href="../../parsing/parsing/">Parsing Pipeline</a>
   </li>
         
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../mapping/mapping/">Mapping Tables</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../explore/explore/">Exploratory Data Analysis</a>
-  </li>
-        
       </ul>
     </li>
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Database Integration</p>
+    <p class="caption">Database and Functionality</p>
   </li>
 
 
@@ -200,6 +172,13 @@
   
     <li class="navtree toctree-l1 group">
       <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
           
 
 
@@ -207,11 +186,43 @@
     
     <li class="navtree toctree-l2 page current">
       <a class="current" href="./">
-        Indexing
+        Indexing Database
           <span class="toctree-expand"></span>
       </a>
     </li>
     
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#indexing-of-icd-11-documents">
+      Indexing of ICD 11 Documents
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#import-the-required-libraries">Import the required libraries</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#initialization-of-index">Initialization of Index</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#populating-the-index">Populating the Index</a>
+        </li>
+    
+    </ul>
+  </li>
+
 
   
         
@@ -219,28 +230,7 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../graph/graph/">Graphical Database</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../nosql/nosql/">NoSQL database</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../flask/flask/">Flask Implementation</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../node/node/">Node Implementation</a>
+    <a class="" href="../../graph/graph/">Graph Database</a>
   </li>
         
       </ul>
@@ -248,7 +238,7 @@
     
       
   <li class="navtree toctree-l1 label">
-    <p class="caption">Graph Algorithms</p>
+    <p class="caption">Algorithm and Querries</p>
   </li>
 
 
@@ -261,21 +251,14 @@
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../algorithms/algI/Algorithms-I/">Algorithms - I</a>
+    <a class="" href="../../graph/query_nx/">Queries in NetworkX</a>
   </li>
         
           
 
 
   <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../algorithms/algII/Algorithms-II/">Algorithms - II</a>
-  </li>
-        
-          
-
-
-  <li class="navtree toctree-l2 inactive">
-    <a class="" href="../../algorithms/algIII/Algorithms-III/">Algorithms - II</a>
+    <a class="" href="../../graph/query_neo4j/">Queries in Neo4j</a>
   </li>
         
       </ul>
@@ -283,6 +266,45 @@
     
       
   <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
     <p class="caption">Model Based Analysis</p>
   </li>
 
@@ -290,28 +312,31 @@
   
 
   
-    <li class="navtree toctree-l1 group">
-      <ul class="navtree subnav-l1 current">
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
           
 
 
-  <li class="navtree toctree-l2 inactive">
+  <li class="navtree toctree-l3 inactive">
     <a class="" href="../../models/clustering/">Clustering</a>
   </li>
         
           
 
 
-  <li class="navtree toctree-l2 inactive">
+  <li class="navtree toctree-l3 inactive">
     <a class="" href="../../models/link/">Link Prediction</a>
   </li>
         
           
 
 
-  <li class="navtree toctree-l2 inactive">
+  <li class="navtree toctree-l3 inactive">
     <a class="" href="../../models/random-walk/">Randomwalk</a>
   </li>
+        
+      </ul>
+    </li>
         
       </ul>
     </li>
@@ -338,11 +363,11 @@
     
       
         
-          <li>Database Integration &raquo;</li>
+          <li>Database and Functionality &raquo;</li>
         
       
     
-    <li>Indexing</li>
+    <li>Indexing Database</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -352,7 +377,131 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="indexing-of-icd-11-documents">Indexing of ICD 11 Documents</h1>
+<p>Indexing of documents is done in two steps</p>
+<h3 id="import-the-required-libraries">Import the required libraries</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch</span> <span style="color: #006699; font-weight: bold">import</span> Elasticsearch
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">elasticsearch_dsl</span> <span style="color: #006699; font-weight: bold">import</span> Search, Q
+</pre></div>
+
+
+<h3 id="initialization-of-index">Initialization of Index</h3>
+<ul>
+<li>Prepare Name and number of shards, clusters etc.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>INDEX_NAME = &quot;icd11&quot;
+NUMBER_SHARDS = 1 
+NUMBER_REPLICAS = 0
+</pre></div>
+
+
+<ul>
+<li>Prepare request body</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>request_body <span style="color: #555555">=</span> {
+        <span style="color: #CC3300">&quot;settings&quot;</span>: {
+            <span style="color: #CC3300">&quot;number_of_shards&quot;</span>: NUMBER_SHARDS,
+            <span style="color: #CC3300">&quot;number_of_replicas&quot;</span>: NUMBER_REPLICAS
+        },
+        <span style="color: #CC3300">&quot;mappings&quot;</span>: {
+                <span style="color: #CC3300">&quot;properties&quot;</span>: {
+                    <span style="color: #CC3300">&quot;id&quot;</span>: {
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;keyword&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;tree&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;name&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;root&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;degree&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;integer&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;definition&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    },
+                    <span style="color: #CC3300">&quot;synonym&quot;</span>:{
+                        <span style="color: #CC3300">&quot;type&quot;</span>: <span style="color: #CC3300">&quot;text&quot;</span>
+                    }
+                }
+            }
+        }
+</pre></div>
+
+
+<ul>
+<li>Call Elasticsearch</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>es <span style="color: #555555">=</span> Elasticsearch()
+</pre></div>
+
+
+<ul>
+<li>Facilitate deleting old indexing if already exist</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">if</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>exists(INDEX_NAME):
+     res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>delete(index <span style="color: #555555">=</span> INDEX_NAME)
+     <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Deleting index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+</pre></div>
+
+
+<ul>
+<li>Create new Indexing </li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>create(index <span style="color: #555555">=</span> INDEX_NAME, body <span style="color: #555555">=</span> request_body)
+<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Create index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+</pre></div>
+
+
+<h3 id="populating-the-index">Populating the Index</h3>
+<ul>
+<li>For each item in the data list, create the data dictionary and op dictionary</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;create data dictionary&#39;&#39;&#39;</span>
+
+data_dict <span style="color: #555555">=</span> {}
+data_dict[<span style="color: #CC3300">&quot;id&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;id&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;tree&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;tree&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;root&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;root&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;name&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;name&quot;</span>]
+data_dict[<span style="color: #CC3300">&#39;parents&#39;</span>]<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;parents&#39;</span>]
+data_dict[<span style="color: #CC3300">&#39;childs&#39;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;childs&#39;</span>]
+data_dict[<span style="color: #CC3300">&quot;sibls&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;sibls&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;degree&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;degree&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;synonym&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;synonym&quot;</span>]
+data_dict[<span style="color: #CC3300">&quot;definition&quot;</span>] <span style="color: #555555">=</span> item[<span style="color: #CC3300">&quot;definition&quot;</span>]
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;create  op dictionary&#39;&#39;&#39;</span>
+op_dict <span style="color: #555555">=</span> {
+     <span style="color: #CC3300">&quot;index&quot;</span>: {
+          <span style="color: #CC3300">&quot;_index&quot;</span>: INDEX_NAME,
+          <span style="color: #CC3300">&quot;_id&quot;</span>: data_dict[<span style="color: #CC3300">&quot;id&quot;</span>]
+                    }
+                }
+</pre></div>
+
+
+<ul>
+<li>Add each data dictionary into bulk data list</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Put current data into the bulk&#39;&#39;&#39;</span> 
+
+bulk_data<span style="color: #555555">.</span>append(op_dict)
+bulk_data<span style="color: #555555">.</span>append(data_dict)
+</pre></div>
+
+
+<ul>
+<li>Push the doc dictionary to Indexing </li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>INDEX_NAME <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;icd11&quot;</span>
+bulk_size <span style="color: #555555">=</span> <span style="color: #FF6600">50</span>
+es <span style="color: #555555">=</span> Elasticsearch()
+es<span style="color: #555555">.</span>bulk(index<span style="color: #555555">=</span>INDEX_NAME, body<span style="color: #555555">=</span>bulk_data, request_timeout <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>)
+</pre></div>
               
             </div>
           </div>
@@ -360,10 +509,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../graph/graph/" class="btn btn-neutral float-right" title="Graphical Database">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../graph/graph/" class="btn btn-neutral float-right" title="Graph Database">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../explore/explore/" class="btn btn-neutral" title="Exploratory Data Analysis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../mongo/mongo/" class="btn btn-neutral" title="NoSQL Database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -389,7 +538,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../explore/explore/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../mongo/mongo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../graph/graph/" style="color: #fcfcfc">Next &raquo;</a></span>

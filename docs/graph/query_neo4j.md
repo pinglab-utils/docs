@@ -1,5 +1,5 @@
 
-### ICD 11 Graph
+### Query and Algorithms
  
 NetworkX and Neo4j has been implemented for creation of ICD 11 graph. The parsed document for each of the node in ICD 11 graph has the following propreties:
 

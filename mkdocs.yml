@@ -37,13 +37,11 @@ nav:
 - Home: index.md
 
 - Setting Up Tools:
-  - Setting up AWS cloud: setup/env.md
   - Setting up Python: setup/anaconda.md
-  - Setting up Neo4J: setup/lib.md
-  - Setting up MongoDB: setup/env.md
-  - Setting up Spark: setup/env.md
-  - Setting up Node: setup/env.md
-  - Setting up Elasticsearch : setup/jupyter.md
+  - Setting up Environment: setup/env.md
+  - Setting up Elasticsearch : setup/elastic.md
+  - Setting up Neo4J: setup/neo4j.md
+  - Setting up MongoDB: setup/mongo.md
   - Setting up Git: setup/git.md
 
 - Introduction: 
@@ -52,30 +50,25 @@ nav:
 - Download and Processing:
   - Download Pipeline: download/download.md
   - Parsing Pipeline: parsing/parsing.md
-  - Mapping Tables: mapping/mapping.md
-  - Exploratory Data Analysis: explore/explore.md
-
-
-- Database Integration:
-  - Indexing: indexing/indexing.md
-  - Graphical Database: graph/graph.md
-  - NoSQL database : nosql/nosql.md
-  - Flask Implementation: flask/flask.md
-  - Node Implementation: node/node.md
- 
-
-
-- Graph Algorithms:
-  - Algorithms - I: algorithms/algI/Algorithms-I.md
-  - Algorithms - II: algorithms/algII/Algorithms-II.md
-  - Algorithms - II: algorithms/algIII/Algorithms-III.md
   
+- Database and Functionality:
+  - NoSQL Database: mongo/mongo.md
+  - Indexing Database: indexing/indexing.md
+  - Graph Database: graph/graph.md
+  
+- Algorithm and Querries:
+  - Queries in NetworkX: graph/query_nx.md
+  - Queries in Neo4j: graph/query_neo4j.md
 
-
-- Model Based Analysis:
-  - Clustering: models/clustering.md
-  - Link Prediction : models/link.md
-  - Randomwalk : models/random-walk.md
+- User Interface: 
+  - Flask: flask/flask.md
+  
+- Data Analysis: 
+  - Exploratory: explore/explore.md 
+  - Model Based Analysis:
+      - Clustering: models/clustering.md
+      - Link Prediction : models/link.md
+      - Randomwalk : models/random-walk.md
 
 
 

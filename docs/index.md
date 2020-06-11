@@ -7,4 +7,10 @@ This online documents has been prepared for ICD 11 Code Tools development and im
 ![img](img/icd11.png)
 
 Figure : Counting number of decendent nodes in each categories of ICD 11 code trees.
+
+
+--------
+Prepared By: Ping Lab Interns (UCLA)
+
+-------
         

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Connecting flask to neo4j, mongoDB, and elasticSearch - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Connecting flask to neo4j, mongoDB, and elasticSearch";
+    var mkdocs_page_input_path = "setup/flask_connections.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../mongo/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../parsing/parsing/">Parsing Pipeline</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database and Functionality</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../indexing/indexing/">Indexing Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/graph/">Graph Database</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithm and Querries</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/query_nx/">Queries in NetworkX</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/query_neo4j/">Queries in Neo4j</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Connecting flask to neo4j, mongoDB, and elasticSearch</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="connecting-flask-to-neo4j-mongodb-and-elasticsearch">Connecting flask to neo4j, mongoDB, and elasticSearch</h1>
+<h3 id="overview">Overview</h3>
+<p>Because our application's requirement's involve us using a heterogenous mix of data sources we needed a way to bring all of these data sources together quickly and easily. To do this we chose flask, a python webframework that allows us to efficiently manage the complexity involved with dealing with all three databases. The general problem is this: repeatedly connecting to each database is not only relatively computationally expensive over time but interacting with each database by itself is not necessarily intuitive, as each database has its own somewhat similar but ultimately different query syntax. To work around this we created three distinct python modules that create a consistent connection to each database as a python variable, create high level functionality based on python functions that take these variables as arguments and then finally mix and match these functions to handle various tasks. </p>
+<p>The general pattern for each module is as follows:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>database_utils/
+    __init__.py
+    database_funcs.py
+    constants.py
+</pre></div>
+
+
+<p>where <strong>__init__.py</strong> specifies what is available for a program importing database_utils, <strong>constants.py</strong> has the connection to the specified database and any other relevant constants, and <strong>database_funcs.py</strong> has all of the function implmentations.</p>
+<p>Below is an example of this pattern with part of our neo4j_utils module.</p>
+<h3 id="neo4j">neo4j</h3>
+<p>The following is the structure of our neo4j module:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>neo4j_utils/
+    __init__.py
+    neo4j_funcs.py
+    constants.py
+</pre></div>
+
+
+<p>Below are code snippets from each file with an accompanying explanation of each snippet.</p>
+<p><strong>__init__.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.graph_funcs</span> <span style="color: #006699; font-weight: bold">import</span> mms_neighborhood
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.constants</span> <span style="color: #006699; font-weight: bold">import</span> NEO4J_DRIVER
+</pre></div>
+
+
+<p>This file specifies that any program importing neo4j_utils has access to a connection to our neo4j database named NEO4J_DRIVER and a function mms_neighborhood, a function that returns the neighborhood of an ICD11 MMS code up to a distance specified.</p>
+<p><strong>graph_funcs.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.constants</span> <span style="color: #006699; font-weight: bold">import</span> NEIGHBORHOOD_QUERY
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">mms_neighborhood</span>(mms_id, distance, driver):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;Returns all of the node ids at or below the distance specified.&quot;&quot;&quot;</span>
+    query <span style="color: #555555">=</span> NEIGHBORHOOD_QUERY<span style="color: #555555">.</span>format(mms_id<span style="color: #555555">=</span>mms_id, distance<span style="color: #555555">=</span>distance)
+    <span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> sesh:
+        results <span style="color: #555555">=</span> sesh<span style="color: #555555">.</span>run(query)
+        ids <span style="color: #555555">=</span> [result[<span style="color: #CC3300">&#39;adj_node&#39;</span>][<span style="color: #CC3300">&#39;id&#39;</span>] <span style="color: #006699; font-weight: bold">for</span> result <span style="color: #000000; font-weight: bold">in</span> results]
+        <span style="color: #006699; font-weight: bold">return</span> ids
+</pre></div>
+
+
+<p>This file is a python program that imports a python object named NEIGHBORHOOD_QUERY from the constants.py file and implements a function named mms_neighborhood. mms_neighborhood takes three arguments: an mms_id(as a string), distance (as an integer or suitable numeric type), and a connection to a neo4j database. With the specified mms_id and distance we create a query string that our connection can then send and run.</p>
+<p><strong>constants.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#All of the constants used for Neo4j related functions</span>
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
+
+NEO4J_DRIVER <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri<span style="color: #555555">=</span><span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,
+                                    auth<span style="color: #555555">=</span>(<span style="color: #CC3300">&quot;neo4j&quot;</span>,<span style="color: #CC3300">&quot;icd11&quot;</span>))
+
+
+NEIGHBORHOOD_QUERY <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;&quot;&quot;MATCH </span>
+<span style="color: #CC3300">(node:icd11_code)-[:child_of*0..</span><span style="color: #AA0000">{distance}</span><span style="color: #CC3300">]-(adj_node:icd11_code)</span>
+<span style="color: #CC3300">WHERE node.id = &#39;</span><span style="color: #AA0000">{mms_id}</span><span style="color: #CC3300">&#39;</span>
+<span style="color: #CC3300">RETURN adj_node</span>
+<span style="color: #CC3300">ORDER BY adj_node.height&quot;&quot;&quot;</span>
+</pre></div>
+
+
+<p>This file is a python program that creates a neo4j connection and the query for finding a neighborhood of a node.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

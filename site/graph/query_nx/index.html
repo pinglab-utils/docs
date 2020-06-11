@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Queries in NetworkX - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Queries in NetworkX";
+    var mkdocs_page_input_path = "graph/query_nx.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongo/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../parsing/parsing/">Parsing Pipeline</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database and Functionality</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../indexing/indexing/">Indexing Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../graph/">Graph Database</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithm and Querries</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Queries in NetworkX
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#query-and-algorithms">
+      Query and Algorithms
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
+    <a href="#exploring-single-node">
+      Exploring single node
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#finding-root-information">Finding root information</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#finding-root-node">Finding Root node</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#finding-neighborhood">Finding neighborhood</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#finding-path-information">Finding path information</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#collect-subgraph">Collect Subgraph</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#exploring-two-node-association">
+      Exploring two node association
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#source-and-target-node">Source and target node</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#neighborhood-of-nodes">Neighborhood of nodes</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#root-node-information">Root node information</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#path-information">Path information</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#subgraph-information">Subgraph Information</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../query_neo4j/">Queries in Neo4j</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Algorithm and Querries &raquo;</li>
+        
+      
+    
+    <li>Queries in NetworkX</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="query-and-algorithms">Query and Algorithms</h2>
+<p>NetworkX and Neo4j has been implemented for creation of ICD 11 graph. The parsed document for each of the node in ICD 11 graph has the following propreties:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{
+<span style="color: #CC3300">&quot;id&quot;</span>: <span style="color: #CC3300">&quot;496418968&quot;</span>,
+<span style="color: #CC3300">&quot;code&quot;</span>: <span style="color: #CC3300">&quot;EB13.2&quot;</span>,
+<span style="color: #CC3300">&quot;title&quot;</span>: <span style="color: #CC3300">&quot;Stevens-Johnson and toxic epidermal necrolysis overlap syndrome&quot;</span>,
+<span style="color: #CC3300">&quot;defn&quot;</span>: <span style="color: #CC3300">&quot;A severe reactive skin disorder with features of both toxic epidermal...&quot;</span>,
+<span style="color: #CC3300">&quot;syns&quot;</span>: <span style="color: #CC3300">&quot;NA&quot;</span>,
+<span style="color: #CC3300">&quot;childs&quot;</span>: [<span style="color: #CC3300">&quot;1077457356&quot;</span>],
+<span style="color: #CC3300">&quot;parents&quot;</span>: [<span style="color: #CC3300">&quot;195467267&quot;</span>]
+}
+</pre></div>
+
+
+<h3 id="exploring-single-node">Exploring single node</h3>
+<p>These steps are dedicated to explore the single node information</p>
+<h4 id="finding-root-information">Finding root information</h4>
+<p>For the provided IDs of root nodes, we can extrace the root node information</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ROOT <span style="color: #555555">=</span> [n <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> G<span style="color: #555555">.</span>neighbors(<span style="color: #CC3300">&quot;ICD11&quot;</span>)]
+INFO <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> ROOT:
+        <span style="color: #006699; font-weight: bold">try</span>:
+            INFO<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;ID&quot;</span>: node,\
+                     <span style="color: #CC3300">&quot;title&quot;</span>: G<span style="color: #555555">.</span>nodes()[node][<span style="color: #CC3300">&quot;title&quot;</span>],\
+                     <span style="color: #CC3300">&quot;defn&quot;</span>:  G<span style="color: #555555">.</span>nodes()[node][<span style="color: #CC3300">&#39;defn&#39;</span>],\
+                     <span style="color: #CC3300">&quot;child&quot;</span>: <span style="color: #336666">len</span>([n <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> G<span style="color: #555555">.</span>neighbors(node)])})
+        <span style="color: #006699; font-weight: bold">except</span>:
+
+             INFO<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;ID&quot;</span>: node,\
+                     <span style="color: #CC3300">&quot;title&quot;</span>: <span style="color: #CC3300">&quot;NA&quot;</span>,\
+                     <span style="color: #CC3300">&quot;defn&quot;</span>:<span style="color: #CC3300">&quot;NA&quot;</span>,\
+                     <span style="color: #CC3300">&quot;child&quot;</span>: <span style="color: #CC3300">&quot;NA&quot;</span>})
+</pre></div>
+
+
+<h4 id="finding-root-node">Finding Root node</h4>
+<p>For a specific node, one can find the corresponding root node</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Prepare root info&#39;&#39;&#39;</span>
+root_of_source_node <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>shortest_path(G,source<span style="color: #555555">=</span>ROOT,target<span style="color: #555555">=</span>source_node)[<span style="color: #FF6600">1</span>]
+</pre></div>
+
+
+<h4 id="finding-neighborhood">Finding neighborhood</h4>
+<p>For a specific node, neighborhood node information can be collected.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Collect Nrighbour info&#39;&#39;&#39;</span>
+source_neighbours <span style="color: #555555">=</span> G<span style="color: #555555">.</span>neighbors(source_node)
+NBD <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> source_neighbours:    
+      NBD<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:item,\
+                 <span style="color: #CC3300">&quot;title&quot;</span>:G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                  <span style="color: #CC3300">&quot;code&quot;</span> : G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>]})
+</pre></div>
+
+
+<h4 id="finding-path-information">Finding path information</h4>
+<p>For a given node, the path from root to the specific node path information can be collected.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Collect Path Info&#39;&#39;&#39;</span>
+path <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>shortest_path(G, ROOT, source_node)
+
+PATH_NAMES <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> path:
+    PATH_NAMES<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:item,\
+                       <span style="color: #CC3300">&quot;title&quot;</span>:G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                       <span style="color: #CC3300">&quot;code&quot;</span> : G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>]})
+</pre></div>
+
+
+<h4 id="collect-subgraph">Collect Subgraph</h4>
+<p>For a specific node, the subgraph can be created by extracting neighbourhood of the node.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Collect Subgraph info&#39;&#39;&#39;</span>
+SG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>Graph()
+<span style="color: #006699; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> path:
+    SG<span style="color: #555555">.</span>add_node(node,title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[node][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                          defn <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[node][<span style="color: #CC3300">&#39;defn&#39;</span>],\
+                          code <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[node][<span style="color: #CC3300">&#39;code&#39;</span>])
+
+    nbd <span style="color: #555555">=</span> [n <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> G<span style="color: #555555">.</span>neighbors(node)]
+    <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> nbd:
+         <span style="color: #006699; font-weight: bold">try</span>:
+           SG<span style="color: #555555">.</span>add_node(item,title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                          defn <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;defn&#39;</span>],\
+                          code <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>])
+         <span style="color: #006699; font-weight: bold">except</span>:
+           SG<span style="color: #555555">.</span>add_node(item,title <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;Key not found&quot;</span>,\
+                          defn <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;key not found&quot;</span>,\
+                          code <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;key not found&quot;</span>)
+
+    <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> nbd:
+          SG<span style="color: #555555">.</span>add_edge(node,item)
+</pre></div>
+
+
+<hr />
+<h3 id="exploring-two-node-association">Exploring two node association</h3>
+<p>Following are the methods to explore node to node association</p>
+<h4 id="source-and-target-node">Source and target node</h4>
+<p>Collect source and target node information</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;identify source and target&#39;&#39;&#39;</span>
+        source_node <span style="color: #555555">=</span> result[<span style="color: #CC3300">&quot;source&quot;</span>]
+        target_node <span style="color: #555555">=</span> result[<span style="color: #CC3300">&quot;target&quot;</span>]
+        source_title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[source_node][<span style="color: #CC3300">&#39;title&#39;</span>]
+        target_title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[target_node][<span style="color: #CC3300">&#39;title&#39;</span>]
+        source_defn <span style="color: #555555">=</span>  G<span style="color: #555555">.</span>nodes()[source_node][<span style="color: #CC3300">&#39;defn&#39;</span>]
+        target_defn <span style="color: #555555">=</span>  G<span style="color: #555555">.</span>nodes()[target_node][<span style="color: #CC3300">&#39;defn&#39;</span>]
+</pre></div>
+
+
+<h4 id="neighborhood-of-nodes">Neighborhood of nodes</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;find neighbourhood info&#39;&#39;&#39;</span>
+        source_neighbours <span style="color: #555555">=</span> G<span style="color: #555555">.</span>neighbors(source_node)
+        target_neighbours <span style="color: #555555">=</span> G<span style="color: #555555">.</span>neighbors(target_node)
+
+        s_NBD <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> source_neighbours:
+            s_NBD<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:item,\
+                        <span style="color: #CC3300">&quot;title&quot;</span>:G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                        <span style="color: #CC3300">&quot;code&quot;</span> : G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>]})
+
+        t_NBD <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> target_neighbours:
+            t_NBD<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:item,\
+                        <span style="color: #CC3300">&quot;title&quot;</span>:G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                        <span style="color: #CC3300">&quot;code&quot;</span> : G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>]})
+</pre></div>
+
+
+<h4 id="root-node-information">Root node information</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;find root info&#39;&#39;&#39;</span>
+        source_root <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>shortest_path(G,source<span style="color: #555555">=</span>ROOT,target<span style="color: #555555">=</span>source_node)[<span style="color: #FF6600">1</span>]
+        target_root <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>shortest_path(G,source<span style="color: #555555">=</span>ROOT,target<span style="color: #555555">=</span>target_node)[<span style="color: #FF6600">1</span>]
+        source_root_title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[source_root][<span style="color: #CC3300">&#39;title&#39;</span>]
+        target_root_title <span style="color: #555555">=</span> G<span style="color: #555555">.</span>nodes()[target_root][<span style="color: #CC3300">&#39;title&#39;</span>]
+        source_root_defn <span style="color: #555555">=</span>  G<span style="color: #555555">.</span>nodes()[source_root][<span style="color: #CC3300">&#39;defn&#39;</span>]
+        target_root_defn <span style="color: #555555">=</span>  G<span style="color: #555555">.</span>nodes()[target_root][<span style="color: #CC3300">&#39;defn&#39;</span>]
+</pre></div>
+
+
+<h4 id="path-information">Path information</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Collect path items&#39;&#39;&#39;</span>
+        path <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>shortest_path(G, source_node, target_node)
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #CC3300">&quot;ICD11&quot;</span> <span style="color: #000000; font-weight: bold">in</span> path:
+            common_child <span style="color: #555555">==</span> <span style="color: #006699; font-weight: bold">False</span>
+
+        PATH_NAMES <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> path:
+            PATH_NAMES<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;id&quot;</span>:item,\
+                               <span style="color: #CC3300">&quot;title&quot;</span>:G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;title&#39;</span>],\
+                               <span style="color: #CC3300">&quot;code&quot;</span> : G<span style="color: #555555">.</span>nodes()[item][<span style="color: #CC3300">&#39;code&#39;</span>]})
+</pre></div>
+
+
+<h4 id="subgraph-information">Subgraph Information</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Find subgraph info&#39;&#39;&#39;</span>
+        SG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>Graph()
+        <span style="color: #006699; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> path:
+            nbd <span style="color: #555555">=</span> [n <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> G<span style="color: #555555">.</span>neighbors(node)]
+            SG<span style="color: #555555">.</span>add_node(node)
+            <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> nbd:
+                SG<span style="color: #555555">.</span>add_node(item)
+            <span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> nbd:
+                SG<span style="color: #555555">.</span>add_edge(node,item)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../query_neo4j/" class="btn btn-neutral float-right" title="Queries in Neo4j">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../graph/" class="btn btn-neutral" title="Graph Database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../graph/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../query_neo4j/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

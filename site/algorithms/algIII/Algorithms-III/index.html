@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Algorithms III - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Algorithms III";
+    var mkdocs_page_input_path = "algorithms/algIII/Algorithms-III.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/mongo/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../parsing/parsing/">Parsing Pipeline</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database and Functionality</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../indexing/indexing/">Indexing Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../graph/graph/">Graph Database</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithm and Querries</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../graph/query_nx/">Queries in NetworkX</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../graph/query_neo4j/">Queries in Neo4j</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Algorithms III</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="algorithm-iii">Algorithm - III</h2>
+<h3 id="operators-shortest-paths-trees-planarity-flows-directed-acyclic-graphs-approximations-and-heuristics-assortativity">Operators, Shortest Paths, Trees, Planarity, Flows, Directed Acyclic Graphs, Approximations and Heuristics,  Assortativity</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">networkx</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">nx</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #555555">%</span>matplotlib inline
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">warnings</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.cbook</span>
+warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: #CC3300">&quot;ignore&quot;</span>,category<span style="color: #555555">=</span>matplotlib<span style="color: #555555">.</span>cbook<span style="color: #555555">.</span>mplDeprecation)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_3_0.png" /></p>
+<h3 id="operators">Operators</h3>
+<p>Unary operations on graphs</p>
+<ul>
+<li><code>complement(G)</code>   Returns the graph complement of G.</li>
+<li><code>reverse(G[, copy])</code>  Returns the reverse directed graph of G.</li>
+</ul>
+<p>Operations on graphs including union, intersection, difference.</p>
+<ul>
+<li><code>compose(G, H)</code>   Returns a new graph of G composed with H.</li>
+<li><code>union(G, H[, rename, name])</code>     Return the union of graphs G and H.</li>
+<li><code>disjoint_union(G, H)</code>    Return the disjoint union of graphs G and H.</li>
+<li><code>intersection(G, H)</code>  Returns a new graph that contains only the edges that exist in both G and H.</li>
+<li><code>difference(G, H)</code>    Returns a new graph that contains the edges that exist in G but not in H.</li>
+<li><code>symmetric_difference(G, H)</code>  Returns new graph with edges that exist in either G or H but not both.</li>
+</ul>
+<p>Operations on many graphs.</p>
+<ul>
+<li><code>compose_all(graphs)</code>     Returns the composition of all graphs.</li>
+<li><code>union_all(graphs[, rename])</code>     Returns the union of all graphs.</li>
+<li><code>disjoint_union_all(graphs)</code>  Returns the disjoint union of all graphs.</li>
+<li><code>intersection_all(graphs)</code>    Returns a new graph that contains only the edges that exist in all graphs.</li>
+</ul>
+<p>Graph products.</p>
+<ul>
+<li><code>cartesian_product(G, H)</code>     Returns the Cartesian product of G and H.</li>
+<li><code>lexicographic_product(G, H)</code>     Returns the lexicographic product of G and H.</li>
+<li><code>rooted_product(G, H, root)</code>  Return the rooted product of graphs G and H rooted at root in H.</li>
+<li><code>strong_product(G, H)</code>    Returns the strong product of G and H.</li>
+<li><code>tensor_product(G, H)</code>    Returns the tensor product of G and H.</li>
+<li><code>power(G, k)</code>     Returns the specified power of a graph.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>complement(G)
+nx<span style="color: #555555">.</span>draw(CG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_5_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>RG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>reverse(nx<span style="color: #555555">.</span>to_directed(G))
+nx<span style="color: #555555">.</span>draw(RG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_6_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">2</span>,<span style="color: #FF6600">3</span>) 
+H <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
+
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">20</span>,<span style="color: #FF6600">8</span>])
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">1</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightgreen&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">3</span>)
+nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>compose(H,G), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_7_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
+nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>power(G,k <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_8_0.png" /></p>
+<hr />
+<h3 id="shortest-paths">Shortest Paths</h3>
+<p>Compute the shortest paths and path lengths between nodes in the graph.</p>
+<p>These algorithms work with undirected and directed graphs.</p>
+<ul>
+<li><code>shortest_path(G[, source, target, weight, …])</code>   Compute shortest paths in the graph.</li>
+<li><code>all_shortest_paths(G, source, target[, …])</code>  Compute all shortest paths in the graph.</li>
+<li><code>shortest_path_length(G[, source, target, …])</code>    Compute shortest path lengths in the graph.</li>
+<li><code>average_shortest_path_length(G[, weight, method])</code>   Returns the average shortest path length.
+has_path(G, source, target)     Returns True if G has a path from source to target.
+Advanced Interface</li>
+</ul>
+<h4 id="shortest-path-algorithms-for-unweighted-graphs">Shortest path algorithms for unweighted graphs.</h4>
+<ul>
+<li><code>single_source_shortest_path(G, source[, cutoff])</code>    Compute shortest path between source and all other nodes reachable from source.</li>
+<li><code>single_source_shortest_path_length(G, source)</code>   Compute the shortest path lengths from source to all reachable nodes.</li>
+<li><code>single_target_shortest_path(G, target[, cutoff])</code>    Compute shortest path to target from all nodes that reach target.</li>
+<li><code>single_target_shortest_path_length(G, target)</code>   Compute the shortest path lengths to target from all reachable nodes.</li>
+<li><code>bidirectional_shortest_path(G, source, target)</code>  Returns a list of nodes in a shortest path between source and target.</li>
+<li><code>all_pairs_shortest_path(G[, cutoff])</code>    Compute shortest paths between all nodes.</li>
+<li><code>all_pairs_shortest_path_length(G[, cutoff])</code>     Computes the shortest path lengths between all nodes in G.</li>
+<li><code>predecessor(G, source[, target, cutoff, …])</code>     Returns dict of predecessors for the path from source to all nodes in G</li>
+</ul>
+<h4 id="shortest-path-algorithms-for-weighed-graphs">Shortest path algorithms for weighed graphs.</h4>
+<ul>
+<li><code>dijkstra_predecessor_and_distance(G, source)</code>   Compute weighted shortest path length and predecessors.</li>
+<li><code>dijkstra_path(G, source, target[, weight])</code> Returns the shortest weighted path from source to target in G.</li>
+<li><code>dijkstra_path_length(G, source, target[, weight])</code>  Returns the shortest weighted path length in G from source to target.</li>
+<li><code>single_source_dijkstra(G, source[, target, …])</code> Find shortest weighted paths and lengths from a source node.</li>
+<li><code>single_source_dijkstra_path(G, source[, …])</code>    Find shortest weighted paths in G from a source node.</li>
+<li><code>single_source_dijkstra_path_length(G, source)  Find shortest weighted path lengths in G from a source node.
+multi_source_dijkstra(G, sources[, target, …])</code>   Find shortest weighted paths and lengths from a given set of source nodes.</li>
+<li><code>multi_source_dijkstra_path(G, sources[, …])</code>     Find shortest weighted paths in G from a given set of source nodes.</li>
+<li><code>multi_source_dijkstra_path_length(G, sources)</code>  Find shortest weighted path lengths in G from a given set of source nodes.</li>
+<li><code>all_pairs_dijkstra(G[, cutoff, weight])</code>     Find shortest weighted paths and lengths between all nodes.</li>
+<li><code>all_pairs_dijkstra_path(G[, cutoff, weight])</code>   Compute shortest paths between all nodes in a weighted graph.</li>
+<li><code>all_pairs_dijkstra_path_length(G[, cutoff, …])</code>  Compute shortest path lengths between all nodes in a weighted graph.</li>
+<li><code>bidirectional_dijkstra(G, source, target[, …])</code> Dijkstra’s algorithm for shortest paths using bidirectional search.</li>
+<li><code>bellman_ford_path(G, source, target[, weight])</code> Returns the shortest path from source to target in a weighted graph G.</li>
+<li><code>bellman_ford_path_length(G, source, target)</code>     Returns the shortest path length from source to target in a weighted graph.</li>
+<li><code>single_source_bellman_ford(G, source[, …])</code>  Compute shortest paths and lengths in a weighted graph G.</li>
+<li><code>single_source_bellman_ford_path(G, source[, …])</code>     Compute shortest path between source and all other reachable nodes for a weighted graph.</li>
+<li><code>single_source_bellman_ford_path_length(G, source)</code>  Compute the shortest path length between source and all other reachable nodes for a weighted graph.</li>
+<li><code>all_pairs_bellman_ford_path(G[, weight])</code>   Compute shortest paths between all nodes in a weighted graph.</li>
+<li><code>all_pairs_bellman_ford_path_length(G[, weight])</code>    Compute shortest path lengths between all nodes in a weighted graph.</li>
+<li><code>bellman_ford_predecessor_and_distance(G, source)</code>    Compute shortest path lengths and predecessors on shortest paths in weighted graphs.</li>
+<li><code>negative_edge_cycle(G[, weight])</code>   Returns True if there exists a negative edge cycle anywhere in G.</li>
+<li><code>goldberg_radzik(G, source[, weight])</code>    Compute shortest path lengths and predecessors on shortest paths in weighted graphs.</li>
+<li><code>johnson(G[, weight])</code>   Uses Johnson’s Algorithm to compute shortest paths.
+Dense Graphs</li>
+</ul>
+<h4 id="floyd-warshall-algorithm-for-shortest-paths">Floyd-Warshall algorithm for shortest paths.</h4>
+<ul>
+<li><code>floyd_warshall(G[, weight])</code>     Find all-pairs shortest path lengths using Floyd’s algorithm.</li>
+<li><code>floyd_warshall_predecessor_and_distance(G[, …])</code>     Find all-pairs shortest path lengths using Floyd’s algorithm.</li>
+<li><code>floyd_warshall_numpy(G[, nodelist, weight])</code>     Find all-pairs shortest path lengths using Floyd’s algorithm.</li>
+<li><code>reconstruct_path(source, target, predecessors)</code>  Reconstruct a path from source to target using the predecessors dict as returned by floyd_warshall_predecessor_and_distance</li>
+</ul>
+<h4 id="a-algorithm">A* Algorithm</h4>
+<p>Shortest paths and path lengths using the A* (“A star”) algorithm.</p>
+<ul>
+<li><code>astar_path(G, source, target[, heuristic, …])</code>   Returns a list of nodes in a shortest path between source and target using the A* (“A-star”) algorithm.</li>
+<li><code>astar_path_length(G, source, target[, …])</code>   Returns the length of the shortest path between source and target using t</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
+</pre></div>
+
+
+<p><img alt="png" src="../output_11_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>shortest_path(G,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">26</span>)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[0, 8, 33, 26]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>all_shortest_paths(G,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">26</span>))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>[[0, 8, 33, 26], [0, 13, 33, 26], [0, 19, 33, 26], [0, 31, 33, 26]]
+</pre></div>
+
+
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Parsing Pipeline - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Parsing Pipeline";
+    var mkdocs_page_input_path = "parsing/parsing.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongo/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Parsing Pipeline
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#parsing-and-mapping">
+      Parsing and Mapping
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-id">Parsing ID</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-code-and-id-to-code-mapping">Parsing Code and ID to Code mapping</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-title-and-id-to-title-mapping">Parsing Title and ID to title mapping</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-definition">Parsing Definition</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-foundation-term">Parsing Foundation term</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-childrens">Parsing Childrens</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-parents">Parsing Parents</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#parsing-post-coordination-term">Parsing Post Coordination Term</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database and Functionality</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../indexing/indexing/">Indexing Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/graph/">Graph Database</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithm and Querries</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/query_nx/">Queries in NetworkX</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../graph/query_neo4j/">Queries in Neo4j</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Download and Processing &raquo;</li>
+        
+      
+    
+    <li>Parsing Pipeline</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="parsing-and-mapping">Parsing and Mapping</h2>
+<p>Parsing Different domponent of the MMS data and creation of mapping</p>
+<h4 id="parsing-id">Parsing ID</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    idterm <span style="color: #555555">=</span> <span style="color: #336666">str</span>(item[<span style="color: #CC3300">&#39;@id&#39;</span>]<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+
+    <span style="color: #006699; font-weight: bold">if</span> idterm<span style="color: #555555">.</span>encode(<span style="color: #CC3300">&#39;utf-8&#39;</span>) <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;other&quot;</span>,<span style="color: #CC3300">&quot;unspecified&quot;</span>]:
+        ID <span style="color: #555555">=</span> <span style="color: #336666">str</span>(item[<span style="color: #CC3300">&#39;@id&#39;</span>]<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">2</span>]) <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;/&quot;</span> <span style="color: #555555">+</span> idterm
+    <span style="color: #006699; font-weight: bold">else</span>:
+        ID <span style="color: #555555">=</span> idterm
+</pre></div>
+
+
+<h4 id="parsing-code-and-id-to-code-mapping">Parsing Code and ID to Code mapping</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>     <span style="color: #006699; font-weight: bold">try</span>:
+        code <span style="color: #555555">=</span> <span style="color: #336666">str</span>(item[<span style="color: #CC3300">&#39;code&#39;</span>])
+        id2code<span style="color: #555555">.</span>update({ID:code})
+    <span style="color: #006699; font-weight: bold">except</span>:
+        code <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+        id2code<span style="color: #555555">.</span>update({ID:code})
+</pre></div>
+
+
+<h4 id="parsing-title-and-id-to-title-mapping">Parsing Title and ID to title mapping</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>title <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;title&#39;</span>][<span style="color: #CC3300">&quot;@value&quot;</span>]
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;id to title mapping&#39;&#39;&#39;</span>
+id2title<span style="color: #555555">.</span>update({ID:title})
+</pre></div>
+
+
+<h4 id="parsing-definition">Parsing Definition</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>try:
+        defn = str(item[&#39;definition&#39;][&#39;@value&#39;])
+    except:
+        defn = &quot;NA&quot;
+</pre></div>
+
+
+<h4 id="parsing-foundation-term">Parsing Foundation term</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    <span style="color: #006699; font-weight: bold">try</span>:
+        index_term <span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;indexTerm&#39;</span>] 
+        INDEX_TERM <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> it <span style="color: #000000; font-weight: bold">in</span> index_term:
+            <span style="color: #006699; font-weight: bold">try</span>:
+                index_term_title <span style="color: #555555">=</span> <span style="color: #336666">str</span>(it[<span style="color: #CC3300">&#39;label&#39;</span>][<span style="color: #CC3300">&#39;@value&#39;</span>])
+            <span style="color: #006699; font-weight: bold">except</span>:
+                index_term_title <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+            <span style="color: #006699; font-weight: bold">try</span>:
+                index_term_foundation_id <span style="color: #555555">=</span> <span style="color: #336666">str</span>(it[<span style="color: #CC3300">&#39;foundationReference&#39;</span>]<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+            <span style="color: #006699; font-weight: bold">except</span>:
+                index_term_foundation_id  <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+
+            INDEX_TERM<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;indexTerm_title&quot;</span>:index_term_title,\
+                              <span style="color: #CC3300">&quot;indexTerm_foundation_id&quot;</span>:index_term_foundation_id})
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;update mapping table&#39;&#39;&#39;</span>
+        id2index<span style="color: #555555">.</span>update({ID:INDEX_TERM})
+    <span style="color: #006699; font-weight: bold">except</span>:
+        index_term <span style="color: #555555">=</span> []
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;update mapping table&#39;&#39;&#39;</span>
+        id2index<span style="color: #555555">.</span>update({ID:INDEX_TERM})
+</pre></div>
+
+
+<h4 id="parsing-childrens">Parsing Childrens</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    <span style="color: #006699; font-weight: bold">try</span>:   
+        childs <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;child&#39;</span>]
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(childs) <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>:
+            CHILDS <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">for</span> c <span style="color: #000000; font-weight: bold">in</span> childs:
+                child_idterm <span style="color: #555555">=</span> <span style="color: #336666">str</span>(c<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+                <span style="color: #006699; font-weight: bold">if</span> child_idterm <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;other&quot;</span>,<span style="color: #CC3300">&quot;unspecified&quot;</span>]:
+                    CHILDS<span style="color: #555555">.</span>append(<span style="color: #336666">str</span>(c<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">2</span>]) <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;/&quot;</span> <span style="color: #555555">+</span> <span style="color: #336666">str</span>(c<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]))
+                <span style="color: #006699; font-weight: bold">else</span>:
+                    CHILDS<span style="color: #555555">.</span>append(<span style="color: #336666">str</span>(c<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]))
+            has_children <span style="color: #555555">=</span> <span style="color: #336666">len</span>(CHILDS)
+        <span style="color: #006699; font-weight: bold">else</span>:
+            CHILDS <span style="color: #555555">=</span> []
+            has_children <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+            is_leaf_node <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>
+    <span style="color: #006699; font-weight: bold">except</span>:
+        CHILDS <span style="color: #555555">=</span> []
+        is_leaf_node <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>
+        has_children <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+</pre></div>
+
+
+<h4 id="parsing-parents">Parsing Parents</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    <span style="color: #006699; font-weight: bold">try</span>:
+        parents <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;parent&#39;</span>]
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(parents)<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span>:
+            PARENTS <span style="color: #555555">=</span> []
+            <span style="color: #006699; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> parents:
+                PARENTS<span style="color: #555555">.</span>append(<span style="color: #336666">str</span>(p<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>]))
+
+            has_parents <span style="color: #555555">=</span> <span style="color: #336666">len</span>(parents)
+        <span style="color: #006699; font-weight: bold">else</span>:
+            PARENTS <span style="color: #555555">=</span>[]
+            has_parents <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">except</span>:
+        PARENTS <span style="color: #555555">=</span> []
+        has_parents <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+</pre></div>
+
+
+<h4 id="parsing-post-coordination-term">Parsing Post Coordination Term</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>    <span style="color: #006699; font-weight: bold">try</span>: 
+        POST_COORDINATION_SCALE <span style="color: #555555">=</span> []
+        postcoordinationScale <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;postcoordinationScale&#39;</span>]
+        <span style="color: #006699; font-weight: bold">for</span> pcs <span style="color: #000000; font-weight: bold">in</span> postcoordinationScale:
+            <span style="color: #006699; font-weight: bold">try</span>:
+                allowMultipleValues <span style="color: #555555">=</span> <span style="color: #336666">str</span>(pcs[<span style="color: #CC3300">&#39;allowMultipleValues&#39;</span>])
+            <span style="color: #006699; font-weight: bold">except</span>:
+                allowMultipleValues <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+            <span style="color: #006699; font-weight: bold">try</span>:
+                axisName <span style="color: #555555">=</span> <span style="color: #336666">str</span>(pcs[<span style="color: #CC3300">&#39;axisName&#39;</span>]<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+            <span style="color: #006699; font-weight: bold">except</span>:
+                axisName <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+            <span style="color: #006699; font-weight: bold">try</span>:
+                requiredPostcoordination <span style="color: #555555">=</span> <span style="color: #336666">str</span>(pcs[<span style="color: #CC3300">&#39;requiredPostcoordination&#39;</span>])
+            <span style="color: #006699; font-weight: bold">except</span>:
+                requiredPostcoordination <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;NA&quot;</span>
+            <span style="color: #006699; font-weight: bold">try</span>:
+                scaleEntity <span style="color: #555555">=</span> pcs[<span style="color: #CC3300">&#39;scaleEntity&#39;</span>]
+                SCALE_ENTITY <span style="color: #555555">=</span> []
+                <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">len</span>(scaleEntity)<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span>:
+                    <span style="color: #006699; font-weight: bold">for</span> e <span style="color: #000000; font-weight: bold">in</span> scaleEntity:
+                        idterm <span style="color: #555555">=</span> <span style="color: #336666">str</span>(e<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">1</span>])
+                        <span style="color: #006699; font-weight: bold">if</span> scale_idterm <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;other&quot;</span>,<span style="color: #CC3300">&quot;unspecified&quot;</span>]:
+                            SCALE_ENTITY<span style="color: #555555">.</span>append(<span style="color: #336666">str</span>(e<span style="color: #555555">.</span>split(<span style="color: #CC3300">&quot;/&quot;</span>)[<span style="color: #555555">-</span><span style="color: #FF6600">2</span>]) <span style="color: #555555">+</span> <span style="color: #CC3300">&quot;/&quot;</span> <span style="color: #555555">+</span> scale_idterm)
+                        <span style="color: #006699; font-weight: bold">else</span>:
+                            SCALE_ENTITY<span style="color: #555555">.</span>append(scale_idterm)
+            <span style="color: #006699; font-weight: bold">except</span>:
+                SCALE_ENTITY <span style="color: #555555">=</span> []
+
+            POST_COORDINATION_SCALE<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;allowMultipleValues&quot;</span>:allowMultipleValues,\
+                                           <span style="color: #CC3300">&quot;axisName&quot;</span>:axisName,\
+                                           <span style="color: #CC3300">&quot;requiredPostcoordination&quot;</span>:requiredPostcoordination,\
+                                           <span style="color: #CC3300">&quot;scaleEntity&quot;</span>: SCALE_ENTITY})
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;update mapping table&#39;&#39;&#39;</span>    
+        id2pcs<span style="color: #555555">.</span>update({ID:POST_COORDINATION_SCALE})
+
+
+    <span style="color: #006699; font-weight: bold">except</span>:
+        POST_COORDINATION_SCALE <span style="color: #555555">=</span> []
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;update mapping table&#39;&#39;&#39;</span>
+        id2pcs<span style="color: #555555">.</span>update({ID:POST_COORDINATION_SCALE})
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../mongo/mongo/" class="btn btn-neutral float-right" title="NoSQL Database">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../download/download/" class="btn btn-neutral" title="Download Pipeline"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../download/download/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../mongo/mongo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

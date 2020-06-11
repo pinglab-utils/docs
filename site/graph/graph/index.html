@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Graph Database - ICD 11 Code Tools</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Graph Database";
+    var mkdocs_page_input_path = "graph/graph.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ICD 11 Code Tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">Home</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Setting Up Tools</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/anaconda/">Setting up Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/env/">Setting up Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/elastic/">Setting up Elasticsearch</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/neo4j/">Setting up Neo4J</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/mongo/">Setting up MongoDB</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../setup/git/">Setting up Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Introduction</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../workflow/">Workflow</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Download and Processing</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../download/download/">Download Pipeline</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../parsing/parsing/">Parsing Pipeline</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Database and Functionality</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../mongo/mongo/">NoSQL Database</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../indexing/indexing/">Indexing Database</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Graph Database
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#icd-11-graph">
+      ICD 11 Graph
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#implementation-of-networkx">
+      Implementation of NetworkX
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#implementation-of-neo4j-epoch">
+      Implementation of Neo4j (EPOCH)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#implementation-of-neo4j-individual">
+      Implementation of Neo4j (Individual)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algorithm and Querries</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../query_nx/">Queries in NetworkX</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../query_neo4j/">Queries in Neo4j</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">User Interface</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../flask/flask/">Flask</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Data Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../explore/explore/">Exploratory</a>
+  </li>
+        
+          
+  <li class="navtree toctree-l2 label">
+    <p class="caption">Model Based Analysis</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l2 group">
+      <ul class="navtree subnav-l2 current">
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/clustering/">Clustering</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/link/">Link Prediction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l3 inactive">
+    <a class="" href="../../models/random-walk/">Randomwalk</a>
+  </li>
+        
+      </ul>
+    </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ICD 11 Code Tools</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Database and Functionality &raquo;</li>
+        
+      
+    
+    <li>Graph Database</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="icd-11-graph">ICD 11 Graph</h3>
+<p>NetworkX and Neo4j has been implemented for creation of ICD 11 graph. The parsed document for each of the node in ICD 11 graph has the following propreties:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{
+<span style="color: #CC3300">&quot;id&quot;</span>: <span style="color: #CC3300">&quot;496418968&quot;</span>,
+<span style="color: #CC3300">&quot;code&quot;</span>: <span style="color: #CC3300">&quot;EB13.2&quot;</span>,
+<span style="color: #CC3300">&quot;title&quot;</span>: <span style="color: #CC3300">&quot;Stevens-Johnson and toxic epidermal necrolysis overlap syndrome&quot;</span>,
+<span style="color: #CC3300">&quot;defn&quot;</span>: <span style="color: #CC3300">&quot;A severe reactive skin disorder with features of both toxic epidermal...&quot;</span>,
+<span style="color: #CC3300">&quot;syns&quot;</span>: <span style="color: #CC3300">&quot;NA&quot;</span>,
+<span style="color: #CC3300">&quot;childs&quot;</span>: [<span style="color: #CC3300">&quot;1077457356&quot;</span>],
+<span style="color: #CC3300">&quot;parents&quot;</span>: [<span style="color: #CC3300">&quot;195467267&quot;</span>]
+}
+</pre></div>
+
+
+<h3 id="implementation-of-networkx">Implementation of NetworkX</h3>
+<ul>
+<li>Install networkx </li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install networkx
+</pre></div>
+
+
+<ul>
+<li>Import networkx in the current environment</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">networkx</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">nx</span>
+</pre></div>
+
+
+<ul>
+<li>Initiate vacant graph</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>Graph()
+</pre></div>
+
+
+<ul>
+<li>Introduce node id and properties from each item of parsed Data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>            G<span style="color: #555555">.</span>add_node(item_id,\
+                   title <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;title&#39;</span>],\
+                   code <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;code&#39;</span>],\
+                   defn <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;defn&#39;</span>],\
+                   childs <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;childs&#39;</span>],\
+                   parents <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;parents&#39;</span>])
+</pre></div>
+
+
+<ul>
+<li>Introduce child relationship as edges of the graph from each item of parsed Data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>        childs <span style="color: #555555">=</span> item[<span style="color: #CC3300">&#39;childs&#39;</span>]
+        <span style="color: #006699; font-weight: bold">for</span> c_id <span style="color: #000000; font-weight: bold">in</span> childs:
+             G<span style="color: #555555">.</span>add_edge(item_id,c_id)
+</pre></div>
+
+
+<h3 id="implementation-of-neo4j-epoch">Implementation of Neo4j (EPOCH)</h3>
+<ul>
+<li>Install neo4j python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install neo4j
+</pre></div>
+
+
+<ul>
+<li>Import neo4j to current environment</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
+</pre></div>
+
+
+<ul>
+<li>Create a python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>driver <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,\
+                      auth <span style="color: #555555">=</span> (<span style="color: #CC3300">&quot;user&quot;</span>,<span style="color: #CC3300">&quot;password&quot;</span>))
+</pre></div>
+
+
+<ul>
+<li>Clean the graph database, if using with pre-existing data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (n:icd11_code) DETACH DELETE n&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create nodes in the graph</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+     session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;call apoc.load.json(&#39;file:///clean_mms_graph_data.json&#39;)&quot;</span>
+                <span style="color: #CC3300">&quot;yield value create (node:icd11_code) set node = value.props;&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create an index on each node's id property, otherwise the next command will take too long</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;create index on :icd11_code(id)&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship 'child_of'</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+     sesh<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;&quot;&quot;match (n:icd11_code) with n , n.child_nodes as child_nodes</span>
+<span style="color: #CC3300">                   match (m:icd11_code) where m.id in child_nodes  with n, m</span>
+<span style="color: #CC3300">                   create (n)&lt;-[:child_of]-(m)&quot;&quot;&quot;</span>)
+</pre></div>
+
+
+<h3 id="implementation-of-neo4j-individual">Implementation of Neo4j (Individual)</h3>
+<ul>
+<li>Install neo4j python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install neo4j
+</pre></div>
+
+
+<ul>
+<li>Import neo4j to current environment</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
+</pre></div>
+
+
+<ul>
+<li>Create a python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>driver <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,\
+                      auth <span style="color: #555555">=</span> (<span style="color: #CC3300">&quot;user&quot;</span>,<span style="color: #CC3300">&quot;password&quot;</span>))
+</pre></div>
+
+
+<ul>
+<li>Clean the graph database, if using with pre-existing data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a) DETACH DELETE a&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create nodes in the graph</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">for</span> item <span style="color: #000000; font-weight: bold">in</span> Data:
+    <span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MERGE(a:Disease{ID: $ID}) &quot;</span>
+                        <span style="color: #CC3300">&quot;ON CREATE SET a.code = $code, </span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.title = $title, a.defn = $defn,</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.syns = $syns, a.childs = $childs,</span><span style="color: #CC3300; font-weight: bold">\</span>
+<span style="color: #CC3300">                        a.parents = $parents&quot;</span>,
+            ID<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;id&#39;</span>], code<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;code&#39;</span>], title<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;title&#39;</span>],\
+            defn<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;defn&#39;</span>], syns<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;syns&#39;</span>], childs<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;childs&#39;</span>],\
+            parents<span style="color: #555555">=</span>item[<span style="color: #CC3300">&#39;parents&#39;</span>])
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship "parents"</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a:Disease),(b:Disease) &quot;</span>
+            <span style="color: #CC3300">&quot;WHERE a.ID in b.parents &quot;</span>
+            <span style="color: #CC3300">&quot;MERGE (a)&lt;-[r:Parent]-(b)&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship "children"</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (a:Disease),(b:Disease) &quot;</span>
+            <span style="color: #CC3300">&quot;WHERE a.ID in b.childs &quot;</span>
+            <span style="color: #CC3300">&quot;MERGE (a)&lt;-[r:Child]-(b)&quot;</span>)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../query_nx/" class="btn btn-neutral float-right" title="Queries in NetworkX">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../indexing/indexing/" class="btn btn-neutral" title="Indexing Database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../indexing/indexing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../query_nx/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -51,7 +51,57 @@ G = nx.Graph()
              G.add_edge(item_id,c_id)
 ```
                 
-### Implementation of Neo4j
+### Implementation of Neo4j (EPOCH)
+
+- Install neo4j python driver
+
+```bash
+pip install neo4j
+```
+- Import neo4j to current environment
+
+```python
+from neo4j import GraphDatabase
+```             
+- Create a python driver
+
+```python
+driver = GraphDatabase.driver(uri = "bolt://localhost:7687",\
+                      auth = ("user","password"))
+```                
+ - Clean the graph database, if using with pre-existing data
+ 
+```python
+with driver.session() as session:
+        session.run("MATCH (n:icd11_code) DETACH DELETE n")
+```
+- Create nodes in the graph
+
+```python
+with driver.session() as session:
+     session.run("call apoc.load.json('file:///clean_mms_graph_data.json')"
+                "yield value create (node:icd11_code) set node = value.props;")
+```
+                
+- Create an index on each node's id property, otherwise the next command will take too long
+
+```python
+
+with driver.session() as session:
+    session.run("create index on :icd11_code(id)")
+```
+
+
+- Create edge with relationship 'child_of'
+
+```python
+with driver.session() as session:
+     sesh.run("""match (n:icd11_code) with n , n.child_nodes as child_nodes
+     		       match (m:icd11_code) where m.id in child_nodes  with n, m
+        	       create (n)<-[:child_of]-(m)""")
+```
+
+### Implementation of Neo4j (Individual)
 
 - Install neo4j python driver
 
@@ -110,7 +160,6 @@ with driver.session() as session:
             "WHERE a.ID in b.childs "
             "MERGE (a)<-[r:Child]-(b)")
 ```
-
 
 
                 

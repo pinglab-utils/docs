@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Setting up MongoDB - ICD 11 Code Tools</title>
+  <title>Connecting flask to neo4j, mongoDB, and elasticSearch - ICD 11 Code Tools</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Setting up MongoDB";
-    var mkdocs_page_input_path = "setup/mongo.md";
+    var mkdocs_page_name = "Connecting flask to neo4j, mongoDB, and elasticSearch";
+    var mkdocs_page_input_path = "setup/flask_connections.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -98,42 +98,9 @@
           
 
 
-  
-    
-    <li class="navtree toctree-l2 page current">
-      <a class="current" href="./">
-        Setting up MongoDB
-          <span class="toctree-expand"></span>
-      </a>
-    </li>
-    
-      
-
-
-
-  <li class="toctree-l2 current">
-    <ul class="subnav-l2 current">
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#downloading-and-installing">Downloading and Installing</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#sample-application-with-python">Sample application with Python:</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#read-more">Read More</a>
-        </li>
-    
-    </ul>
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../mongo/">Setting up MongoDB</a>
   </li>
-
-
-  
         
           
 
@@ -355,12 +322,8 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Setting Up Tools &raquo;</li>
-        
-      
     
-    <li>Setting up MongoDB</li>
+    <li>Connecting flask to neo4j, mongoDB, and elasticSearch</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -370,93 +333,73 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="setting-up-mongodb">Setting Up MongoDB</h1>
-<p>MongoDB is NOSQL database. THe detail of the installation can be founs at <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">official website of MongoDB</a>. Following is th installation steps obtained at 2019-Oct 15.</p>
-<h3 id="downloading-and-installing">Downloading and Installing</h3>
-<p><strong>1. Import the public key used by the package management system.</strong></p>
-<p>From a terminal, issue the following command to import the MongoDB public GPG Key from https://www.mongodb.org/static/pgp/server-4.2.asc:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | 
-sudo apt-key add -
+                <h1 id="connecting-flask-to-neo4j-mongodb-and-elasticsearch">Connecting flask to neo4j, mongoDB, and elasticSearch</h1>
+<h3 id="overview">Overview</h3>
+<p>Because our application's requirement's involve us using a heterogenous mix of data sources we needed a way to bring all of these data sources together quickly and easily. To do this we chose flask, a python webframework that allows us to efficiently manage the complexity involved with dealing with all three databases. The general problem is this: repeatedly connecting to each database is not only relatively computationally expensive over time but interacting with each database by itself is not necessarily intuitive, as each database has its own somewhat similar but ultimately different query syntax. To work around this we created three distinct python modules that create a consistent connection to each database as a python variable, create high level functionality based on python functions that take these variables as arguments and then finally mix and match these functions to handle various tasks. </p>
+<p>The general pattern for each module is as follows:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>database_utils/
+    __init__.py
+    database_funcs.py
+    constants.py
 </pre></div>
 
 
-<p>The operation should respond with an OK.</p>
-<p><strong>2. Create a list file for MongoDB.</strong></p>
-<p>Create the list file <code>/etc/apt/sources.list.d/mongodb-org-4.2.list</code> for your version of Ubuntu.</p>
-<p>Click on the appropriate tab for your version of Ubuntu. If you are unsure of what Ubuntu version the host is running, open a terminal or shell on the host and execute <code>lsb_release -dc</code>.</p>
-<p>Ubuntu 18.04 (Bionic): The following instruction is for Ubuntu 18.04 (Bionic). For Ubuntu 16.04 (Xenial), click on the appropriate tab. Create the /etc/apt/sources.list.d/mongodb-org-4.2.list file for Ubuntu 18.04 (Bionic):</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 
-multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+<p>where <strong>__init__.py</strong> specifies what is available for a program importing database_utils, <strong>constants.py</strong> has the connection to the specified database and any other relevant constants, and <strong>database_funcs.py</strong> has all of the function implmentations.</p>
+<p>Below is an example of this pattern with part of our neo4j_utils module.</p>
+<h3 id="neo4j">neo4j</h3>
+<p>The following is the structure of our neo4j module:</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>neo4j_utils/
+    __init__.py
+    neo4j_funcs.py
+    constants.py
 </pre></div>
 
 
-<p><strong><em>3. Reload local package database.</em></strong>
-Issue the following command to reload the local package database:</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get update
+<p>Below are code snippets from each file with an accompanying explanation of each snippet.</p>
+<p><strong>__init__.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.graph_funcs</span> <span style="color: #006699; font-weight: bold">import</span> mms_neighborhood
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.constants</span> <span style="color: #006699; font-weight: bold">import</span> NEO4J_DRIVER
 </pre></div>
 
 
-<p><strong><em>4. Install the MongoDB packages.</em></strong>
-You can install either the latest stable version of MongoDB or a specific version of MongoDB.</p>
-<p>Install the latest version of MongoDB.  Install a specific release of MongoDB.
-To install the latest stable version, issue the following</p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>sudo apt-get install -y mongodb-org
+<p>This file specifies that any program importing neo4j_utils has access to a connection to our neo4j database named NEO4J_DRIVER and a function mms_neighborhood, a function that returns the neighborhood of an ICD11 MMS code up to a distance specified.</p>
+<p><strong>graph_funcs.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">.constants</span> <span style="color: #006699; font-weight: bold">import</span> NEIGHBORHOOD_QUERY
+
+<span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">mms_neighborhood</span>(mms_id, distance, driver):
+    <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;Returns all of the node ids at or below the distance specified.&quot;&quot;&quot;</span>
+    query <span style="color: #555555">=</span> NEIGHBORHOOD_QUERY<span style="color: #555555">.</span>format(mms_id<span style="color: #555555">=</span>mms_id, distance<span style="color: #555555">=</span>distance)
+    <span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> sesh:
+        results <span style="color: #555555">=</span> sesh<span style="color: #555555">.</span>run(query)
+        ids <span style="color: #555555">=</span> [result[<span style="color: #CC3300">&#39;adj_node&#39;</span>][<span style="color: #CC3300">&#39;id&#39;</span>] <span style="color: #006699; font-weight: bold">for</span> result <span style="color: #000000; font-weight: bold">in</span> results]
+        <span style="color: #006699; font-weight: bold">return</span> ids
 </pre></div>
 
 
-<h3 id="sample-application-with-python">Sample application with Python:</h3>
-<ul>
-<li>Install the python package <code>pymongo</code> in the environment</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install pymongo
+<p>This file is a python program that imports a python object named NEIGHBORHOOD_QUERY from the constants.py file and implements a function named mms_neighborhood. mms_neighborhood takes three arguments: an mms_id(as a string), distance (as an integer or suitable numeric type), and a connection to a neo4j database. With the specified mms_id and distance we create a query string that our connection can then send and run.</p>
+<p><strong>constants.py</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic">#All of the constants used for Neo4j related functions</span>
+
+<span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
+
+NEO4J_DRIVER <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri<span style="color: #555555">=</span><span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,
+                                    auth<span style="color: #555555">=</span>(<span style="color: #CC3300">&quot;neo4j&quot;</span>,<span style="color: #CC3300">&quot;icd11&quot;</span>))
+
+
+NEIGHBORHOOD_QUERY <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;&quot;&quot;MATCH </span>
+<span style="color: #CC3300">(node:icd11_code)-[:child_of*0..</span><span style="color: #AA0000">{distance}</span><span style="color: #CC3300">]-(adj_node:icd11_code)</span>
+<span style="color: #CC3300">WHERE node.id = &#39;</span><span style="color: #AA0000">{mms_id}</span><span style="color: #CC3300">&#39;</span>
+<span style="color: #CC3300">RETURN adj_node</span>
+<span style="color: #CC3300">ORDER BY adj_node.height&quot;&quot;&quot;</span>
 </pre></div>
 
 
-<ul>
-<li>Create Database and Collection</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pymongo</span>
-client <span style="color: #555555">=</span> pymongo<span style="color: #555555">.</span>MongoClient(<span style="color: #CC3300">&quot;mongodb://localhost:27017/&quot;</span>)
-db <span style="color: #555555">=</span> client[<span style="color: #CC3300">&quot;test&quot;</span>]
-collection <span style="color: #555555">=</span> db[<span style="color: #CC3300">&quot;test_collection&quot;</span>]
-</pre></div>
-
-
-<ul>
-<li>Next, Populate the collection</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>x <span style="color: #555555">=</span> collection<span style="color: #555555">.</span>insert_many(DATA)
-</pre></div>
-
-
-<ul>
-<li>Print out one sample data:</li>
-</ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>x <span style="color: #555555">=</span> collection<span style="color: #555555">.</span>find_one()
-<span style="color: #336666">print</span>(x) 
-</pre></div>
-
-
-<hr />
-<h3 id="read-more">Read More</h3>
-<ol>
-<li><a href="https://docs.mongodb.com/manual/core/document/">MongoDB Documents</a></li>
-<li><a href="https://docs.mongodb.com/manual/tutorial/">MongoDB Tutorials -I</a></li>
-<li><a href="https://www.tutorialspoint.com/mongodb/index.htm">MongoDB Tutorials Point</a></li>
-</ol>
+<p>This file is a python program that creates a neo4j connection and the query for finding a neighborhood of a node.</p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../git/" class="btn btn-neutral float-right" title="Setting up Git">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../neo4j/" class="btn btn-neutral" title="Setting up Neo4J"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -480,10 +423,6 @@ collection <span style="color: #555555">=</span> db[<span style="color: #CC3300"
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../neo4j/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../git/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

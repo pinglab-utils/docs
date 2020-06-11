@@ -447,7 +447,7 @@ nx<span style="color: #555555">.</span>draw(G)
 <li><code>out_degree_centrality(G)</code>    Compute the out-degree centrality for nodes.</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(r<span style="color: #555555">=</span><span style="color: #FF6600">3</span>, h<span style="color: #555555">=</span><span style="color: #FF6600">2</span>) 
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, with_labels <span style="color: #555555">=</span><span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, with_labels <span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -623,7 +623,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 <p><img alt="png" src="../output_30_0.png" /></p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms.community</span> <span style="color: #006699; font-weight: bold">import</span> k_clique_communities
 c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(k_clique_communities(G,k<span style="color: #555555">=</span><span style="color: #FF6600">4</span>))
-<span style="color: #006699; font-weight: bold">print</span>(c)
+<span style="color: #336666">print</span>(c)
 </pre></div>
 
 
@@ -633,7 +633,7 @@ c <span style="color: #555555">=</span> <span style="color: #336666">list</span>
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms.community</span> <span style="color: #006699; font-weight: bold">import</span> greedy_modularity_communities
 c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(greedy_modularity_communities(G))
-<span style="color: #006699; font-weight: bold">print</span>(c)
+<span style="color: #336666">print</span>(c)
 </pre></div>
 
 
@@ -643,7 +643,7 @@ c <span style="color: #555555">=</span> <span style="color: #336666">list</span>
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms.community</span> <span style="color: #006699; font-weight: bold">import</span> asyn_lpa_communities
 c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(asyn_lpa_communities(G))
-<span style="color: #006699; font-weight: bold">print</span>(c)
+<span style="color: #336666">print</span>(c)
 </pre></div>
 
 
@@ -653,7 +653,7 @@ c <span style="color: #555555">=</span> <span style="color: #336666">list</span>
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms.community</span> <span style="color: #006699; font-weight: bold">import</span> label_propagation_communities
 c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(label_propagation_communities(G))
-<span style="color: #006699; font-weight: bold">print</span>(c)
+<span style="color: #336666">print</span>(c)
 </pre></div>
 
 
@@ -663,7 +663,7 @@ c <span style="color: #555555">=</span> <span style="color: #336666">list</span>
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms.community</span> <span style="color: #006699; font-weight: bold">import</span> asyn_fluidc
 c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(asyn_fluidc(G,k<span style="color: #555555">=</span><span style="color: #FF6600">5</span>))
-<span style="color: #006699; font-weight: bold">print</span>(c)
+<span style="color: #336666">print</span>(c)
 </pre></div>
 
 
@@ -685,13 +685,13 @@ c <span style="color: #555555">=</span> <span style="color: #336666">list</span>
 <li><code>dfs_labeled_edges(G[, source, depth_limit])</code>     Iterate over edges in a depth-first-search (DFS) labeled by type.</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>random_tree(<span style="color: #FF6600">20</span>) 
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>,with_labels<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>,with_labels<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
 <p><img alt="png" src="../output_38_0.png" /></p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>L <span style="color: #555555">=</span> <span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>dfs_edges(G, source<span style="color: #555555">=</span><span style="color: #FF6600">0</span>, depth_limit<span style="color: #555555">=</span><span style="color: #FF6600">5</span>))
-<span style="color: #006699; font-weight: bold">print</span>(L)
+<span style="color: #336666">print</span>(L)
 </pre></div>
 
 
@@ -700,7 +700,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>TG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>dfs_tree(G)
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>,with_labels<span style="color: #555555">=</span><span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>,with_labels<span style="color: #555555">=</span><span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -844,7 +844,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 <li><code>bfs_predecessors(G, source[, depth_limit])</code>  Returns an iterator of predecessors in breadth-first-search from source.</li>
 <li><code>bfs_successors(G, source[, depth_limit])</code>    Returns an iterator of successors in breadth-first-search from so</li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_edges(G,<span style="color: #FF6600">0</span>)))
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_edges(G,<span style="color: #FF6600">0</span>)))
 </pre></div>
 
 
@@ -852,12 +852,12 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 </pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>bfs_tree(G,<span style="color: #FF6600">0</span>), node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>bfs_tree(G,<span style="color: #FF6600">0</span>), node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">200</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
 <p><img alt="png" src="../output_49_0.png" /></p>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_predecessors(G,<span style="color: #FF6600">0</span>)))
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_predecessors(G,<span style="color: #FF6600">0</span>)))
 </pre></div>
 
 
@@ -865,7 +865,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 </pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_successors(G,<span style="color: #FF6600">0</span>)))
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">print</span>(<span style="color: #336666">list</span>(nx<span style="color: #555555">.</span>bfs_successors(G,<span style="color: #FF6600">0</span>)))
 </pre></div>
 
 

@@ -376,7 +376,7 @@
 <li>Creating welcome page which renders landing page "index.html"</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Welcome Page&#39;&#39;&#39;</span>
-<span style="color: #9999FF">@app.route</span>(<span style="color: #CC3300">&quot;/&quot;</span>)
+<span style="color: #9999FF">@app</span><span style="color: #555555">.</span>route(<span style="color: #CC3300">&quot;/&quot;</span>)
 <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">welcome</span>():
     <span style="color: #006699; font-weight: bold">return</span> render_template(<span style="color: #CC3300">&#39;index.html&#39;</span>)
 </pre></div>
@@ -385,7 +385,7 @@
 <ul>
 <li>Sending data to a route address: </li>
 </ul>
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@app.route</span>(<span style="color: #CC3300">&quot;/boot_ask_one&quot;</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #9999FF">@app</span><span style="color: #555555">.</span>route(<span style="color: #CC3300">&quot;/boot_ask_one&quot;</span>)
 <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">boot</span>():
 
     <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;prepare some data called INFO&#39;&#39;&#39;</span>

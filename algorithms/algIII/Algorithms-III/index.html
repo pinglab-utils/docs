@@ -350,7 +350,7 @@ warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: 
 
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -387,13 +387,13 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 <li><code>power(G, k)</code>     Returns the specified power of a graph.</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>CG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>complement(G)
-nx<span style="color: #555555">.</span>draw(CG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(CG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
 <p><img alt="png" src="../output_5_0.png" /></p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>RG <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>reverse(nx<span style="color: #555555">.</span>to_directed(G))
-nx<span style="color: #555555">.</span>draw(RG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(RG, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -403,17 +403,17 @@ H <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>b
 
 plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">20</span>,<span style="color: #FF6600">8</span>])
 plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">1</span>)
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightblue&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightgreen&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>,node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;lightgreen&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 plt<span style="color: #555555">.</span>subplot(<span style="color: #FF6600">1</span>,<span style="color: #FF6600">3</span>,<span style="color: #FF6600">3</span>)
-nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>compose(H,G), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>compose(H,G), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
 <p><img alt="png" src="../output_7_0.png" /></p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">3</span>,<span style="color: #FF6600">2</span>)
-nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>power(G,k <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(nx<span style="color: #555555">.</span>power(G,k <span style="color: #555555">=</span> <span style="color: #FF6600">3</span>), node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;magenta&#39;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -483,7 +483,7 @@ Dense Graphs</li>
 <li><code>astar_path_length(G, source, target[, …])</code>   Returns the length of the shortest path between source and target using t</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 

@@ -223,8 +223,19 @@
       
 
   <li class="toctree-l2">
-    <a href="#implementation-of-neo4j">
-      Implementation of Neo4j
+    <a href="#implementation-of-neo4j-epoch">
+      Implementation of Neo4j (EPOCH)
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#implementation-of-neo4j-individual">
+      Implementation of Neo4j (Individual)
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -435,7 +446,65 @@
 </pre></div>
 
 
-<h3 id="implementation-of-neo4j">Implementation of Neo4j</h3>
+<h3 id="implementation-of-neo4j-epoch">Implementation of Neo4j (EPOCH)</h3>
+<ul>
+<li>Install neo4j python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>pip install neo4j
+</pre></div>
+
+
+<ul>
+<li>Import neo4j to current environment</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">neo4j</span> <span style="color: #006699; font-weight: bold">import</span> GraphDatabase
+</pre></div>
+
+
+<ul>
+<li>Create a python driver</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>driver <span style="color: #555555">=</span> GraphDatabase<span style="color: #555555">.</span>driver(uri <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;bolt://localhost:7687&quot;</span>,\
+                      auth <span style="color: #555555">=</span> (<span style="color: #CC3300">&quot;user&quot;</span>,<span style="color: #CC3300">&quot;password&quot;</span>))
+</pre></div>
+
+
+<ul>
+<li>Clean the graph database, if using with pre-existing data</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+        session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;MATCH (n:icd11_code) DETACH DELETE n&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create nodes in the graph</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+     session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;call apoc.load.json(&#39;file:///clean_mms_graph_data.json&#39;)&quot;</span>
+                <span style="color: #CC3300">&quot;yield value create (node:icd11_code) set node = value.props;&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create an index on each node's id property, otherwise the next command will take too long</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+    session<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;create index on :icd11_code(id)&quot;</span>)
+</pre></div>
+
+
+<ul>
+<li>Create edge with relationship 'child_of'</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">with</span> driver<span style="color: #555555">.</span>session() <span style="color: #006699; font-weight: bold">as</span> session:
+     sesh<span style="color: #555555">.</span>run(<span style="color: #CC3300">&quot;&quot;&quot;match (n:icd11_code) with n , n.child_nodes as child_nodes</span>
+<span style="color: #CC3300">                   match (m:icd11_code) where m.id in child_nodes  with n, m</span>
+<span style="color: #CC3300">                   create (n)&lt;-[:child_of]-(m)&quot;&quot;&quot;</span>)
+</pre></div>
+
+
+<h3 id="implementation-of-neo4j-individual">Implementation of Neo4j (Individual)</h3>
 <ul>
 <li>Install neo4j python driver</li>
 </ul>

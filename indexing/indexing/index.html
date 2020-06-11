@@ -444,7 +444,7 @@ NUMBER_REPLICAS = 0
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">if</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>exists(INDEX_NAME):
      res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>delete(index <span style="color: #555555">=</span> INDEX_NAME)
-     <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Deleting index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+     <span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Deleting index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
 </pre></div>
 
 
@@ -452,7 +452,7 @@ NUMBER_REPLICAS = 0
 <li>Create new Indexing </li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>res <span style="color: #555555">=</span> es<span style="color: #555555">.</span>indices<span style="color: #555555">.</span>create(index <span style="color: #555555">=</span> INDEX_NAME, body <span style="color: #555555">=</span> request_body)
-<span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Create index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
+<span style="color: #336666">print</span>(<span style="color: #CC3300">&quot;Create index </span><span style="color: #AA0000">%s</span><span style="color: #CC3300"> , Response: </span><span style="color: #AA0000">%s</span><span style="color: #CC3300">&quot;</span> <span style="color: #555555">%</span> (INDEX_NAME, res))
 </pre></div>
 
 

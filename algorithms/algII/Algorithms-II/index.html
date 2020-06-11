@@ -350,7 +350,7 @@ warnings<span style="color: #555555">.</span>filterwarnings(<span style="color: 
 
 
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -646,7 +646,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">networkx</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">nx</span>
 <span style="color: #006699; font-weight: bold">from</span> <span style="color: #00CCFF; font-weight: bold">networkx.algorithms</span> <span style="color: #006699; font-weight: bold">import</span> node_classification
 G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>balanced_tree(<span style="color: #FF6600">3</span>,<span style="color: #FF6600">3</span>)
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -655,7 +655,7 @@ nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #55
 G<span style="color: #555555">.</span>node[<span style="color: #FF6600">2</span>][<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;B&#39;</span>
 G<span style="color: #555555">.</span>node[<span style="color: #FF6600">3</span>][<span style="color: #CC3300">&#39;label&#39;</span>] <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;C&#39;</span>
 L <span style="color: #555555">=</span> node_classification<span style="color: #555555">.</span>harmonic_function(G)
-<span style="color: #006699; font-weight: bold">print</span>(L)
+<span style="color: #336666">print</span>(L)
 </pre></div>
 
 
@@ -669,7 +669,7 @@ L <span style="color: #555555">=</span> node_classification<span style="color: #
 </pre></div>
 
 
-<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, labels <span style="color: #555555">=</span> LL, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, labels <span style="color: #555555">=</span> LL, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightgreen&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
@@ -687,14 +687,14 @@ L <span style="color: #555555">=</span> node_classification<span style="color: #
 <li><code>within_inter_cluster(G[, ebunch, delta, …])</code>     Compute the ratio of within- and inter-cluster common neighb</li>
 </ul>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>G <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>karate_club_graph()
-nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #336666">True</span>)
+nx<span style="color: #555555">.</span>draw(G, node_size <span style="color: #555555">=</span> <span style="color: #FF6600">500</span>, node_color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;lightblue&quot;</span>, with_labels <span style="color: #555555">=</span> <span style="color: #006699; font-weight: bold">True</span>)
 </pre></div>
 
 
 <p><img alt="png" src="../output_26_0.png" /></p>
 <div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>preds <span style="color: #555555">=</span> nx<span style="color: #555555">.</span>resource_allocation_index(G, [(<span style="color: #FF6600">0</span>,<span style="color: #FF6600">10</span>),(<span style="color: #FF6600">9</span>, <span style="color: #FF6600">18</span>), (<span style="color: #FF6600">11</span>, <span style="color: #FF6600">12</span>),(<span style="color: #FF6600">30</span>,<span style="color: #FF6600">27</span>),(<span style="color: #FF6600">16</span>,<span style="color: #FF6600">26</span>)])
 <span style="color: #006699; font-weight: bold">for</span> u, v, p <span style="color: #000000; font-weight: bold">in</span> preds:
-    <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&#39;(</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">) -&gt; </span><span style="color: #AA0000">%.8f</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (u, v, p))
+    <span style="color: #336666">print</span>(<span style="color: #CC3300">&#39;(</span><span style="color: #AA0000">%d</span><span style="color: #CC3300">, </span><span style="color: #AA0000">%d</span><span style="color: #CC3300">) -&gt; </span><span style="color: #AA0000">%.8f</span><span style="color: #CC3300">&#39;</span> <span style="color: #555555">%</span> (u, v, p))
 </pre></div>
 
 
